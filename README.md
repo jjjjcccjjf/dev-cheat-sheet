@@ -7,12 +7,12 @@
 
 ## Back-end
 1. [PHP Snippets](#php-snippets)
-  1. [Wordpress](#snippets)
-    * [Installing Wordpress](#installing-wordpress)
-    * [Branding your theme](#branding-your-theme)
-    * [Common wordpress plugins](#common-wordpress-plugins)
-    * [Wordpress Snippets](#wordpress-snippets)
-  1. Generic PHP Snippets
+    1. [Wordpress](#snippets)
+        * [Installing Wordpress](#installing-wordpress)
+        * [Branding your theme](#branding-your-theme)
+        * [Common wordpress plugins](#common-wordpress-plugins)
+        * [Wordpress Snippets](#wordpress-snippets)
+    1. Generic PHP Snippets
 1. JavaScript Snippets
 
 ## Cheatsheets
