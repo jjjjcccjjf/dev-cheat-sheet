@@ -1,18 +1,125 @@
 # awesome-snippets
-# Introduction
-TODO
 
 # Table of Contents 
-* [Installing Wordpress](#installing-wordpress)
-* [Setup your version control](#setup-your-version-control)
-* [Branding your theme](#branding-your-theme)
-* [.htaccess](#htaccess)
-* [Wordpress Plugins](#wordpress-plugins)
-    * [Common wordpress plugins](#common-wordpress-plugins)
-* [Code Snippets](#code-snippets)
+## Front-end
+1. (CSS Snippets)[#css-snippets]
+1. (Animation Snippets)[#animation-snippets]
 
-# Installing Wordpress
-Open Terminal  
+## Back-end
+1. [PHP Snippets](#php-snippets)
+  1. [Wordpress](#snippets)
+    * [Installing Wordpress](#installing-wordpress)
+    * [Branding your theme](#branding-your-theme)
+    * [Common wordpress plugins](#common-wordpress-plugins)
+    * [Wordpress Snippets](#wordpress-snippets)
+  1. Generic PHP Snippets
+1. JavaScript Snippets
+
+## Cheatsheets
+1. Git Cheatsheet
+1. Markdown Cheatsheet
+
+## Deployment
+1. Command-line snippets
+    * [Installing Wordpress](#installing-wordpress)
+    * [Setup your version control](#setup-your-version-control)
+1. .htaccess
+* * *
+
+# CSS Snippets
+
+For controlling re-captcha css
+```css
+#rc-imageselect, .g-recaptcha {transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;}
+```
+
+* * * 
+
+# PHP Snippets
+## Number formatting
+
+Function for formatting price. 20000 -> 20K, 1000000 to 1M, etc
+```php
+/**
+ * Returns the price rounded up with English shortcut
+ * such as K, M, B
+ * @param  int     $n    unformatted price
+ * @return string        [description]
+ */
+function formatPrice($n)
+{
+	if ($n < 1000000) {
+		// Anything less than a million
+		$f = round(number_format($n / 1000, 3), 2);
+		$f .= 'K';
+	} else if ($n < 1000000000) {
+		// Anything less than a billion
+		$f = round(number_format($n / 1000000, 3), 2);
+		$f .= 'M';
+	} else {
+		// At least a billion
+		$f = round(number_format($n / 1000000000, 3), 2);
+		$f .= 'B';
+	}
+	return 'P' . $f;
+}
+```
+
+
+* * * 
+
+## Animation Snippets
+### Smooth scrolling on anchors on the same page
+Just paste this on your footer and it will work
+
+       <!-- smooth scroll  -->
+       <script type="text/javascript">
+       // Select all links with hashes
+       $('a[href*="#"]')
+       // Remove links that don't actually link to anything
+       .not('[href="#"]')
+       .not('[href="#0"]')
+       .click(function(event) {
+         // On-page links
+         if (
+           location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+           &&
+           location.hostname == this.hostname
+         ) {
+           // Figure out element to scroll to
+           var target = $(this.hash);
+           target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+           // Does a scroll target exist?
+           if (target.length) {
+             // Only prevent default if animation is actually gonna happen
+             event.preventDefault();
+             $('html, body').animate({
+               scrollTop: target.offset().top
+             }, 1000, function() {
+               // Callback after animation
+               // Must change focus!
+               var $target = $(target);
+               $target.focus();
+               if ($target.is(":focus")) { // Checking if the target was focused
+                 return false;
+               } else {
+                 $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                 $target.focus(); // Set focus again
+               };
+             });
+           }
+         }
+       });
+       </script>
+       <!-- /smooth scroll  -->
+
+* * * 
+
+# Command-line snippets
+Open Terminal  / TODO Windows + R or Command + R
+  
+## Installing Wordpress
+
 Copy and paste the ff. to your Terminal
 
        cd /path/to/your/environment/
@@ -23,9 +130,7 @@ Copy and paste the ff. to your Terminal
        cd my-project
        cp -i wp-config-sample.php wp-config.php
 
-Edit your `wp-config.php` and fill-out appropriate credentials
- 
-# Setup your Version Control
+## Setup your Version Control
 Assuming you're inside your project directory
        
        git init
@@ -33,11 +138,39 @@ Assuming you're inside your project directory
        git commit -m "initial commit"
        git remote add origin https://github.com/your-username/my-project.git
        git push -u origin master
+
+* * *
+
+# .htaccess
+Regular Wordpress .htaccess. 
+(Optional) For fixing forbidden in wp-admin
+
+       # BEGIN WordPress
+       # Uncomment this block if you cannot access wp-admin
+       # <Files wp-login.php>
+       # Order Deny,Allow
+       # Deny from all
+       # Allow from all
+       # </Files>
+       # / Uncomment this block if you cannot access wp-admin
+       <IfModule mod_rewrite.c>
+       RewriteEngine On
+       RewriteBase /
+       RewriteRule ^index\.php$ - [L]
+       RewriteCond %{REQUEST_FILENAME} !-f
+       RewriteCond %{REQUEST_FILENAME} !-d
+       RewriteRule . /index.php [L]
+       </IfModule>
+       # END WordPress
+
+* * * 
+
+# Wordpress Snippets
+
+After [installing wordpress](#installing-wordpress), edit your `wp-config.php` and fill-out appropriate credentials
        
-# Branding your theme
-
-## Theme
-
+## Branding your theme
+ 
 1. Delete all themes except the latest one
 1. Rename the theme to your desired theme name
 1. In your theme directory, open `style.css`
@@ -98,29 +231,7 @@ or you can just run this script...
  1. Use this script for dynamic url in our includes
        
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.css">
-
-
-# .htaccess
-For fixing forbidden in wp-admin
-
-       # BEGIN WordPress
-       # Uncomment this block if you need it
-       # <Files wp-login.php>
-       # Order Deny,Allow
-       # Deny from all
-       # Allow from all
-       # </Files>
-       # / Uncomment this block if you need it
-       <IfModule mod_rewrite.c>
-       RewriteEngine On
-       RewriteBase /
-       RewriteRule ^index\.php$ - [L]
-       RewriteCond %{REQUEST_FILENAME} !-f
-       RewriteCond %{REQUEST_FILENAME} !-d
-       RewriteRule . /index.php [L]
-       </IfModule>
-       # END WordPress
-
+	
 ## Wordpress Plugins
 
 ### Common wordpress plugins.
@@ -137,7 +248,7 @@ Common WP plugins for a generic website
 ### Advanced wordpress plugins
 TODO
 
-## Code Snippets
+## Wordpress Snippets
 
 ### 「ＴＨＥ ＬＯＯＰ」
 
@@ -367,8 +478,6 @@ or
 	}
 ```
 
----
-
 ## Pagination
 
 Save this as `function-pagination.php`
@@ -480,86 +589,4 @@ if (function_exists(custom_pagination)) {
 /* Pagination */
 wp_reset_postdata();
 ?>
-```
----
-
-## UX
-### Smooth scrolling on anchors on the same page
-Just paste this on your footer and it will work
-
-       <!-- smooth scroll  -->
-       <script type="text/javascript">
-       // Select all links with hashes
-       $('a[href*="#"]')
-       // Remove links that don't actually link to anything
-       .not('[href="#"]')
-       .not('[href="#0"]')
-       .click(function(event) {
-         // On-page links
-         if (
-           location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-           &&
-           location.hostname == this.hostname
-         ) {
-           // Figure out element to scroll to
-           var target = $(this.hash);
-           target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-           // Does a scroll target exist?
-           if (target.length) {
-             // Only prevent default if animation is actually gonna happen
-             event.preventDefault();
-             $('html, body').animate({
-               scrollTop: target.offset().top
-             }, 1000, function() {
-               // Callback after animation
-               // Must change focus!
-               var $target = $(target);
-               $target.focus();
-               if ($target.is(":focus")) { // Checking if the target was focused
-                 return false;
-               } else {
-                 $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                 $target.focus(); // Set focus again
-               };
-             });
-           }
-         }
-       });
-       </script>
-       <!-- /smooth scroll  -->
-       
----
-
-## Not Wordpress
-
-Function for formatting price. 20000 -> 20K, 1000000 to 1M, etc
-```php
-/**
- * Returns the price rounded up with English shortcut
- * such as K, M, B
- * @param  int     $n    unformatted price
- * @return string        [description]
- */
-function formatPrice($n)
-{
-	if ($n < 1000000) {
-		// Anything less than a million
-		$f = round(number_format($n / 1000, 3), 2);
-		$f .= 'K';
-	} else if ($n < 1000000000) {
-		// Anything less than a billion
-		$f = round(number_format($n / 1000000, 3), 2);
-		$f .= 'M';
-	} else {
-		// At least a billion
-		$f = round(number_format($n / 1000000000, 3), 2);
-		$f .= 'B';
-	}
-	return 'P' . $f;
-}
-```
-
-For controlling re-captcha css
-```css
-#rc-imageselect, .g-recaptcha {transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;}
-```
+``` 
