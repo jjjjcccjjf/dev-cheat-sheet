@@ -2,8 +2,8 @@
 
 # Table of Contents 
 ## Front-end
-1. (CSS Snippets)[#css-snippets]
-1. (Animation Snippets)[#animation-snippets]
+1. [CSS Snippets](#css-snippets)
+1. [Animation Snippets](#animation-snippets)
 
 ## Back-end
 1. [PHP Snippets](#php-snippets)
