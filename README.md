@@ -1,4 +1,4 @@
-# Enzo's Development Cheatsheet
+# Enzo's development cheat sheet
 Lorem ipsum dolor sit amet
 
 # Table of Contents 
@@ -35,9 +35,9 @@ Lorem ipsum dolor sit amet
     * [Installing Wordpress](#installing-wordpress)
     * [Setup your version control](#setup-your-version-control)
 * [.htaccess](#htaccess)
-#### Cheatsheets
-* [Git Cheatsheet](#git-cheatsheet)
-* [Markdown Cheatsheet](#markdown-cheatsheet)
+#### Cheat sheets
+* [Git Cheatsheet](#https://github.com/jjjjcccjjf/dev-cheatsheet/blob/master/cheat-sheets/git-cheat-sheet.md)
+* [Markdown Cheatsheet](https://github.com/jjjjcccjjf/dev-cheatsheet/blob/master/cheat-sheets/markdown-cheat-sheet.md)
 
 - - -
 
@@ -668,10 +668,4 @@ Assuming you're inside your project directory
        </IfModule>
        # END WordPress
 ```
-
-- - -
-
-# Cheatsheets
-
-## Git cheatsheet
-## Markdown cheatsheet
+ 
