@@ -1,29 +1,41 @@
 # Enzo's development cheat sheet
-Just a compilation of kick-ass tools and code snippets to kickstart your development
+Just a compilation of kick-ass tools and code snippets to kickstart your development mostly for web and APIs. Contributions are open!
 
-# Table of Contents 
+###### TODO:
+* Add cute emojis
+* Add frameworks
+    * Codeigniter
+    * Laravel
+* Add PHP & Web references
+* Add REST Crud
+* jp_lib
+
+# Contents 
 #### Development Tools
 * [Text Editors / Integrated Development Environment (IDE)](#text-editors--integrated-development-environment-ide)
-    * [Atom](#atom)
-    * [Sublime Text](#sublime-text)
-    * [Visual Studio Code](#visual-studio-code)
+    * [Atom](https://atom.io/)
+    * [Sublime Text](https://www.sublimetext.com/)
+    * [Visual Studio Code](https://code.visualstudio.com/)
 * [Chrome Extensions](#chrome-extensions)
     * [var_masterpiece](https://chrome.google.com/webstore/detail/varmasterpiece/chfhddogiigmfpkcmgfpolalagdcamkl?utm_source=chrome-app-launcher-info-dialog)
     * [JSON Formatter](https://chrome.google.com/webstore/detail/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
     * [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 * File Transfer Clients
-   * FIlezilla
+   * [FIlezilla](https://filezilla-project.org/)
 * [Version Control Clients](#version-control-clients)
    * [SourceTree](https://www.sourcetreeapp.com/)
    * [Git Kraken](https://www.gitkraken.com/)
    * [Git Bash (Terminal Interface)](https://git-scm.com/downloads)
+#### Standards
+* [PHP Standard Recommendations (PSR)](http://www.php-fig.org/psr/)
+* [RESTful APIs](http://www.restapitutorial.com/)
 #### Code Snippets
 * [Front-end](#front-end)
     * [CSS Snippets](#css-snippets)
     * [Animation Snippets](#animation-snippets)
 * [Back-end](#back-end)
     * [PHP Snippets](#php-snippets)
-        * [Wordpress](#snippets)
+        * [Wordpress](#wordpress)
             * [Installing Wordpress](#installing-wordpress)
             * [Branding your theme](#branding-your-theme)
             * [Common wordpress plugins](#common-wordpress-plugins)
@@ -35,10 +47,10 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
     * [Installing Wordpress](#installing-wordpress)
     * [Setup your version control](#setup-your-version-control)
 * [.htaccess](#htaccess)
-#### Cheat sheets
+#### Cheat sheets & References
 * [Git Cheatsheet](https://github.com/jjjjcccjjf/dev-cheat-sheet/blob/master/cheat-sheets/git-cheat-sheet.md)
 * [Markdown Cheatsheet](https://github.com/jjjjcccjjf/dev-cheatsheet/blob/master/cheat-sheets/markdown-cheat-sheet.md)
-
+* [Regular Expressions (RegEx)](https://github.com/zeeshanu/learn-regex)
 - - -
 
 # Development Tools
@@ -81,12 +93,15 @@ Haven't used this much yet. So I don't have much opinion about it.
 # Chrome Extensions
 ## var_masterpiece
 For easier debugging your var_dump results
+
 [View in Chrome Store](https://chrome.google.com/webstore/detail/varmasterpiece/chfhddogiigmfpkcmgfpolalagdcamkl?utm_source=chrome-app-launcher-info-dialog)
 ## JSON Formatter
 For easier viewing your json data.
+
 [View in Chrome Store](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
 ## Postman
 Postman is a GUI for testing your API. This is important if you are interacting with APIs
+
 [View in Chrome Store](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 - - -
 # Version Control Clients
@@ -189,13 +204,12 @@ function formatPrice($n)
 ```
 
 
-- - -
  
-# Wordpress Snippets
+### Wordpress
 
 After [installing wordpress](#installing-wordpress), edit your `wp-config.php` and fill-out appropriate credentials
        
-## Branding your theme
+#### Branding your theme
  
 1. Delete all themes except the latest one
 1. Rename the theme to your desired theme name
@@ -214,7 +228,7 @@ or you can just run this script...
        sed -i '16,$d' my-project/style.css
        rm my-project/style.css.bak
 
-### Setup a Front Page
+#### Setup a Front Page
 1. Copy and replace the contents of `front-page.php` with this.
        
        <?php
@@ -235,7 +249,7 @@ or you can just run this script...
 1. On the drop down, select `Home` template as Front page
 1. Save changes
 
-### Header and Footer
+#### Header and Footer
 1. Personalize your `header.php` and `footer.php`
 1. Don't forget to put `<?php wp_head(); ?>` before the closing `</head>` of your header tag
 1. Don't forget to put `<?php wp_footer(); ?>` before the closing `</body>` of your body tag
@@ -258,9 +272,9 @@ or you can just run this script...
        
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.css">
 	
-## Wordpress Plugins
+### Wordpress Plugins
 
-### Common wordpress plugins.
+#### Common wordpress plugins.
 Common WP plugins for a generic website
 
 | Plugin name                           | Description                                  |
@@ -271,12 +285,12 @@ Common WP plugins for a generic website
 | [Advanced Custom Fields PRO](https://drive.google.com/file/d/0B_bwOHDZvZw-UkJZYUxRRWFHUUE/view?usp=sharing) | For additional custom fields                 |  
 | Enable Media Replace | For replacing images in Media Library |
 
-### Advanced wordpress plugins
+#### Advanced wordpress plugins
 TODO
 
-## Wordpress Snippets
+### Wordpress Snippets
 
-### 「ＴＨＥ ＬＯＯＰ」
+#### 「ＴＨＥ ＬＯＯＰ」
 
        <?php
        /* Template Name: My Template */
@@ -290,11 +304,11 @@ TODO
        endwhile;
        get_footer();
 
-### Linking to assets
+#### Linking to assets
 
        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.css">
 
-### Basic loop for iterating posts
+#### Basic loop for iterating posts
 
        <?php
        $args = array('post_type' => 'service', 'posts_per_page' => -1);
@@ -303,7 +317,7 @@ TODO
         <!-- your content here -->
        <?php endwhile; wp_reset_postdata(); } else { /** no posts found **/ } ?>
        
-### Basic Loop with optional meta query
+#### Basic Loop with optional meta query
        
        <?php
        $args = array('post_type' => 'service', 'posts_per_page' => -1);
@@ -354,7 +368,7 @@ Nested meta query example
 	  );
        
        
-### Get WP nav menu items
+#### Get WP nav menu items
 
        /** variable for our menu object **/
        $menu_obj = wp_get_nav_menu_items('main'); # wp post object for `main` wp menu
@@ -365,11 +379,11 @@ Nested meta query example
        <?php endforeach; ?>
        <!-- /menu loop -->
        
-### Add Shortcode in your template
+#### Add Shortcode in your template
 
       <?php echo do_shortcode('[contact-form-7 id="89" title="Food Tasting"]'); ?>
  
-### Advanced Custom Fields Simple Repeater Loop
+#### Advanced Custom Fields Simple Repeater Loop
 
      <?php if( have_rows('repeater_field_name') ): while ( have_rows('repeater_field_name') ) : the_row(); ?>
        <li><img src="<?php echo get_sub_field('sub_field_name'); ?>"></li>
@@ -384,7 +398,7 @@ or
        <p><?php echo $obj['another_field'];?></p>
      <?php } ?>
  
-### Advanced Custom Fields Nested Repeater Loop 
+#### Advanced Custom Fields Nested Repeater Loop 
 (parent_repeater->child_repeater->child_repeater_items)
 
 #### Normal example
@@ -504,7 +518,7 @@ or
 	}
 ```
 
-## Pagination
+#### Pagination
 
 Save this as `function-pagination.php`
 ```php
