@@ -1,4 +1,4 @@
-# Enzo's Dev Cheetsheet
+# Enzo's Development Cheetsheet
 
 ---
 
@@ -8,7 +8,7 @@
     1. Atom
     1. Sublime
     1. Visual Studio Code
-1. Chrome Extensions
+1. [Chrome Extensions](#chrome-extensions)
     1. [var_masterpiece](https://chrome.google.com/webstore/detail/varmasterpiece/chfhddogiigmfpkcmgfpolalagdcamkl?utm_source=chrome-app-launcher-info-dialog)
     1. [JSON Formatter](https://chrome.google.com/webstore/detail/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
 1. File Transfer Clients
@@ -41,16 +41,6 @@
     * [Installing Wordpress](#installing-wordpress)
     * [Setup your version control](#setup-your-version-control)
 1. .htaccess
-* * *
-
-# CSS Snippets
-
-For controlling re-captcha css
-```css
-#rc-imageselect, .g-recaptcha {transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;}
-```
-
----
 
 # Development Tools
 
@@ -90,7 +80,27 @@ I don't use sublime that much. But it's blazingly faster compared to other text 
 Haven't used this much yet. So I don't have much opinion about it.
 
 [View Website](https://code.visualstudio.com/)
-* * * 
+
+- - -
+# Chrome Extensions
+## var_masterpiece
+For easier debugging your var_dump results
+[View in Chrome Store](https://chrome.google.com/webstore/detail/varmasterpiece/chfhddogiigmfpkcmgfpolalagdcamkl?utm_source=chrome-app-launcher-info-dialog)
+## JSON Formatter
+For easier viewing your json data.
+[View in Chrome Store](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
+
+- - -
+
+
+# CSS Snippets
+
+For controlling re-captcha css
+```css
+#rc-imageselect, .g-recaptcha {transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;}
+```
+
+- - -
 
 # PHP Snippets
 ## Number formatting
