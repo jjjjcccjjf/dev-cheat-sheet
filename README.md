@@ -1,5 +1,5 @@
 # Enzo's development cheat sheet
-Lorem ipsum dolor sit amet
+Just a compilation of kick-ass tools and code snippets to kickstart your development
 
 # Table of Contents 
 #### Development Tools
