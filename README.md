@@ -1,6 +1,23 @@
-# awesome-snippets
+# Enzo's Dev Cheetsheet
+
+---
 
 # Table of Contents 
+## Development Tools
+1. Text Editors / Integrated Development Environment (IDE)
+    1. Atom
+    1. Sublime
+    1. Visual Studio Code
+1. Chrome Extensions
+    1. [var_masterpiece](https://chrome.google.com/webstore/detail/varmasterpiece/chfhddogiigmfpkcmgfpolalagdcamkl?utm_source=chrome-app-launcher-info-dialog)
+    1. [JSON Formatter](https://chrome.google.com/webstore/detail/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
+1. File Transfer Clients
+   1. FIlezilla
+1. Version Control Clients
+   1. SourceTree
+   1. Git Kraken
+   1. Git Bash (Terminal Interface)
+
 ## Front-end
 1. [CSS Snippets](#css-snippets)
 1. [Animation Snippets](#animation-snippets)
@@ -33,6 +50,46 @@ For controlling re-captcha css
 #rc-imageselect, .g-recaptcha {transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;}
 ```
 
+---
+
+# Development Tools
+
+## Text Editors / Integrated Development Environment (IDE)
+## Atom
+##### About
+What I like about atom is its IDE-like experience and it also has a lot of nice plugins that I really think is essential for an efficient development workflow. This is my preffered Text Editor as well.
+#### Pros:
+* Packages
+* Has an interface for installing packages and themes, etc
+* Almost like an IDE
+* Has built-in GIT integration
+#### Cons:
+*  Slow to boot
+*  Unresponsive bug
+#### Recommended Packages
+* Remote FTP
+* Markdown Previewer Plus
+* docblockr
+* jquery-snippets
+
+[View Website](https://atom.io/)
+
+## Sublime
+#### About
+I don't use sublime that much. But it's blazingly faster compared to other text editors.
+#### Pros:
+* Super fast
+#### Cons: 
+* Installing packages is such a hassle
+#### Recommended Packages:
+* TODO:
+
+[View Website](https://www.sublimetext.com/)
+## Visual Studio Code
+#### About
+Haven't used this much yet. So I don't have much opinion about it.
+
+[View Website](https://code.visualstudio.com/)
 * * * 
 
 # PHP Snippets
