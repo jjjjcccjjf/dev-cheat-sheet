@@ -36,7 +36,7 @@ Lorem ipsum dolor sit amet
     * [Setup your version control](#setup-your-version-control)
 * [.htaccess](#htaccess)
 #### Cheat sheets
-* [Git Cheatsheet](#https://github.com/jjjjcccjjf/dev-cheatsheet/blob/master/cheat-sheets/git-cheat-sheet.md)
+* [Git Cheatsheet](https://github.com/jjjjcccjjf/dev-cheat-sheet/blob/master/cheat-sheets/git-cheat-sheet.md)
 * [Markdown Cheatsheet](https://github.com/jjjjcccjjf/dev-cheatsheet/blob/master/cheat-sheets/markdown-cheat-sheet.md)
 
 - - -
