@@ -1,52 +1,50 @@
-# Enzo's Development Cheetsheet
-
----
+# Enzo's Development Cheatsheet
+Lorem ipsum dolor sit amet
 
 # Table of Contents 
-## Development Tools
-1. Text Editors / Integrated Development Environment (IDE)
-    1. Atom
-    1. Sublime
-    1. Visual Studio Code
-1. [Chrome Extensions](#chrome-extensions)
-    1. [var_masterpiece](https://chrome.google.com/webstore/detail/varmasterpiece/chfhddogiigmfpkcmgfpolalagdcamkl?utm_source=chrome-app-launcher-info-dialog)
-    1. [JSON Formatter](https://chrome.google.com/webstore/detail/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
-1. File Transfer Clients
-   1. FIlezilla
-1. Version Control Clients
-   1. SourceTree
-   1. Git Kraken
-   1. Git Bash (Terminal Interface)
-
-## Front-end
-1. [CSS Snippets](#css-snippets)
-1. [Animation Snippets](#animation-snippets)
-
-## Back-end
-1. [PHP Snippets](#php-snippets)
-    1. [Wordpress](#snippets)
-        * [Installing Wordpress](#installing-wordpress)
-        * [Branding your theme](#branding-your-theme)
-        * [Common wordpress plugins](#common-wordpress-plugins)
-        * [Wordpress Snippets](#wordpress-snippets)
-    1. Generic PHP Snippets
-1. JavaScript Snippets
-
-## Cheatsheets
-1. Git Cheatsheet
-1. Markdown Cheatsheet
-
-## Deployment
-1. Command-line snippets
+#### Development Tools
+* [Text Editors / Integrated Development Environment (IDE)](#text-editors--integrated-development-environment-ide)
+    * [Atom](#atom)
+    * [Sublime Text](#sublime-text)
+    * [Visual Studio Code](#visual-studio-code)
+* [Chrome Extensions](#chrome-extensions)
+    * [var_masterpiece](https://chrome.google.com/webstore/detail/varmasterpiece/chfhddogiigmfpkcmgfpolalagdcamkl?utm_source=chrome-app-launcher-info-dialog)
+    * [JSON Formatter](https://chrome.google.com/webstore/detail/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
+    * [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+* File Transfer Clients
+   * FIlezilla
+* [Version Control Clients](#version-control-clients)
+   * [SourceTree](https://www.sourcetreeapp.com/)
+   * [Git Kraken](https://www.gitkraken.com/)
+   * [Git Bash (Terminal Interface)](https://git-scm.com/downloads)
+#### Code Snippets
+* [Front-end](#front-end)
+    * [CSS Snippets](#css-snippets)
+    * [Animation Snippets](#animation-snippets)
+* [Back-end](#back-end)
+    * [PHP Snippets](#php-snippets)
+        * [Wordpress](#snippets)
+            * [Installing Wordpress](#installing-wordpress)
+            * [Branding your theme](#branding-your-theme)
+            * [Common wordpress plugins](#common-wordpress-plugins)
+            * [Wordpress Snippets](#wordpress-snippets)
+        * Generic PHP Snippets
+    * JavaScript Snippets
+#### Deployment
+* [Command-line snippets](#command-line-snippets)
     * [Installing Wordpress](#installing-wordpress)
     * [Setup your version control](#setup-your-version-control)
-1. .htaccess
+* [.htaccess](#htaccess)
+#### Cheatsheets
+* [Git Cheatsheet](#git-cheatsheet)
+* [Markdown Cheatsheet](#markdown-cheatsheet)
+
+- - -
 
 # Development Tools
 
 ## Text Editors / Integrated Development Environment (IDE)
 ## Atom
-##### About
 What I like about atom is its IDE-like experience and it also has a lot of nice plugins that I really think is essential for an efficient development workflow. This is my preffered Text Editor as well.
 #### Pros:
 * Packages
@@ -64,9 +62,8 @@ What I like about atom is its IDE-like experience and it also has a lot of nice 
 
 [View Website](https://atom.io/)
 
-## Sublime
-#### About
-I don't use sublime that much. But it's blazingly faster compared to other text editors.
+## Sublime Text
+I don't use sublime that much but it's blazingly fast compared to other text editors.
 #### Pros:
 * Super fast
 #### Cons: 
@@ -76,7 +73,6 @@ I don't use sublime that much. But it's blazingly faster compared to other text 
 
 [View Website](https://www.sublimetext.com/)
 ## Visual Studio Code
-#### About
 Haven't used this much yet. So I don't have much opinion about it.
 
 [View Website](https://code.visualstudio.com/)
@@ -89,56 +85,36 @@ For easier debugging your var_dump results
 ## JSON Formatter
 For easier viewing your json data.
 [View in Chrome Store](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
-
+## Postman
+Postman is a GUI for testing your API. This is important if you are interacting with APIs
+[View in Chrome Store](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+- - -
+# Version Control Clients
+## SourceTree
+SourceTree is a GIT Client by Atlassian.
+[View Website](https://www.sourcetreeapp.com/)
+## Git Kraken
+[View Website](https://www.gitkraken.com/)
+## Git / Git Bash
+Git is required for other Git clients to work. But most of the time, their installer comes with git for supporting the application itself. Git Bash is an interface for a Unix-like terminal. You can also use git commands on git bash as well.
+[View Website](https://git-scm.com/downloads)
 - - -
 
+# Code Snippets
 
-# CSS Snippets
+# Front-end
+### CSS Snippets
 
-For controlling re-captcha css
+#### Re-captcha css
 ```css
 #rc-imageselect, .g-recaptcha {transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;}
 ```
 
-- - -
+### Animation Snippets
 
-# PHP Snippets
-## Number formatting
-
-Function for formatting price. 20000 -> 20K, 1000000 to 1M, etc
-```php
-/**
- * Returns the price rounded up with English shortcut
- * such as K, M, B
- * @param  int     $n    unformatted price
- * @return string        [description]
- */
-function formatPrice($n)
-{
-	if ($n < 1000000) {
-		// Anything less than a million
-		$f = round(number_format($n / 1000, 3), 2);
-		$f .= 'K';
-	} else if ($n < 1000000000) {
-		// Anything less than a billion
-		$f = round(number_format($n / 1000000, 3), 2);
-		$f .= 'M';
-	} else {
-		// At least a billion
-		$f = round(number_format($n / 1000000000, 3), 2);
-		$f .= 'B';
-	}
-	return 'P' . $f;
-}
-```
-
-
-* * * 
-
-## Animation Snippets
-### Smooth scrolling on anchors on the same page
+#### Smooth scrolling on anchors on the same page
 Just paste this on your footer and it will work
-
+```javascript
        <!-- smooth scroll  -->
        <script type="text/javascript">
        // Select all links with hashes
@@ -179,59 +155,42 @@ Just paste this on your footer and it will work
        });
        </script>
        <!-- /smooth scroll  -->
+```
+ 
+# Back-end
+### PHP Snippets
 
-* * * 
+#### Number formatting
+Function for formatting price. 20000 -> 20K, 1000000 to 1M, etc
+```php
+/**
+ * Returns the price rounded up with English shortcut
+ * such as K, M, B
+ * @param  int     $n    unformatted price
+ * @return string        [description]
+ */
+function formatPrice($n)
+{
+	if ($n < 1000000) {
+		// Anything less than a million
+		$f = round(number_format($n / 1000, 3), 2);
+		$f .= 'K';
+	} else if ($n < 1000000000) {
+		// Anything less than a billion
+		$f = round(number_format($n / 1000000, 3), 2);
+		$f .= 'M';
+	} else {
+		// At least a billion
+		$f = round(number_format($n / 1000000000, 3), 2);
+		$f .= 'B';
+	}
+	return 'P' . $f;
+}
+```
 
-# Command-line snippets
-Open Terminal  / TODO Windows + R or Command + R
-  
-## Installing Wordpress
 
-Copy and paste the ff. to your Terminal
-
-       cd /path/to/your/environment/
-       curl -O https://wordpress.org/latest.zip
-       unzip latest.zip
-       rm latest.zip
-       mv wordpress my-project
-       cd my-project
-       cp -i wp-config-sample.php wp-config.php
-
-## Setup your Version Control
-Assuming you're inside your project directory
-       
-       git init
-       git add .
-       git commit -m "initial commit"
-       git remote add origin https://github.com/your-username/my-project.git
-       git push -u origin master
-
-* * *
-
-# .htaccess
-Regular Wordpress .htaccess. 
-(Optional) For fixing forbidden in wp-admin
-
-       # BEGIN WordPress
-       # Uncomment this block if you cannot access wp-admin
-       # <Files wp-login.php>
-       # Order Deny,Allow
-       # Deny from all
-       # Allow from all
-       # </Files>
-       # / Uncomment this block if you cannot access wp-admin
-       <IfModule mod_rewrite.c>
-       RewriteEngine On
-       RewriteBase /
-       RewriteRule ^index\.php$ - [L]
-       RewriteCond %{REQUEST_FILENAME} !-f
-       RewriteCond %{REQUEST_FILENAME} !-d
-       RewriteRule . /index.php [L]
-       </IfModule>
-       # END WordPress
-
-* * * 
-
+- - -
+ 
 # Wordpress Snippets
 
 After [installing wordpress](#installing-wordpress), edit your `wp-config.php` and fill-out appropriate credentials
@@ -657,3 +616,62 @@ if (function_exists(custom_pagination)) {
 wp_reset_postdata();
 ?>
 ``` 
+- - -
+
+# Deployment
+
+## Command-line snippets
+To be able to fire up these snippets, you must boot up your terminal first. 
+On windows, you need to launch `git bash`. On Mac, click on the `spotlight` then type in `terminal`.
+  
+### Installing Wordpress
+Copy and paste the ff. to your Terminal
+```bash
+       cd /path/to/your/environment/
+       curl -O https://wordpress.org/latest.zip
+       unzip latest.zip
+       rm latest.zip
+       mv wordpress my-project
+       cd my-project
+       cp -i wp-config-sample.php wp-config.php
+```       
+
+### Setup your Version Control
+Assuming you're inside your project directory
+```bash
+       git init
+       git add .
+       git commit -m "initial commit"
+       git remote add origin https://github.com/your-username/my-project.git
+       git push -u origin master
+```
+
+## .htaccess
+#### Regular wordpress htaccess
+(Optional) For fixing forbidden in wp-admin
+```htaccess
+       # BEGIN WordPress
+       # Uncomment this block if you cannot access wp-admin
+       # <Files wp-login.php>
+       # Order Deny,Allow
+       # Deny from all
+       # Allow from all
+       # </Files>
+       # / Uncomment this block if you cannot access wp-admin
+       <IfModule mod_rewrite.c>
+       RewriteEngine On
+       RewriteBase /
+       RewriteRule ^index\.php$ - [L]
+       RewriteCond %{REQUEST_FILENAME} !-f
+       RewriteCond %{REQUEST_FILENAME} !-d
+       RewriteRule . /index.php [L]
+       </IfModule>
+       # END WordPress
+```
+
+- - -
+
+# Cheatsheets
+
+## Git cheatsheet
+## Markdown cheatsheet
