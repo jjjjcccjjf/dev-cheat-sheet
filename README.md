@@ -633,7 +633,7 @@ wp_reset_postdata();
 ``` 
 - - -
 
-# REST-Igniter Snippets
+# REST-Igniter Authorization
 
 * Step 1. Create table for API keys
 ```sql
@@ -649,32 +649,32 @@ wp_reset_postdata();
        PRIMARY KEY (`id`)
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
-* Step 2. On `application/config/rest.php` line `326`,
+* Step 2. On `application/config/rest.php` line `326`,  
 Enable rest keys / authorization to `TRUE`
 ```php
 $config['rest_enable_keys'] = TRUE;
 ````
-* Step 3. On `application/config/rest.php` line `129`,
+* Step 3. On `application/config/rest.php` line `129`,  
 From LDAP make auth_source into blank line 
 ```php
 # Just empty the string
 # $config['auth_source'] = 'ldap';
 $config['auth_source'] = '';
 ```
-* Step 4. On `application/config/rest.php` line `113`,
+* Step 4. On `application/config/rest.php` line `113`,  
 From empty string, put to `basic`
 ```php
 $config['rest_auth'] = 'basic';
 ```
 
-* Step 5. On `application/config/rest.php` line `213`,
+* Step 5. On `application/config/rest.php` line `213`,  
 Configure available credentials for API Access
 ```php
 $config['rest_valid_logins'] = ['admin' => '1234'];
 ```
 
 
-* Step 6. On `application/libraries/REST_Controller.php` line `764`,
+* Step 6. On `application/libraries/REST_Controller.php` line `764`,  
 Make custom response for forbidden and unauthorized access
 ```php
 public function response($data = NULL, $http_code = NULL)
@@ -697,7 +697,7 @@ ob_start();
        ...
 ```
 
-* Step 7. (Optional) 
+* Step 7. (Optional)   
 Create `logs` Table for recording every access of the API
 ```sql
 CREATE TABLE `logs` (
@@ -715,7 +715,7 @@ CREATE TABLE `logs` (
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-* Step 7.1 (Optional) table On `application/config/rest.php` line `406`
+* Step 7.1 (Optional) table On `application/config/rest.php` line `406`  
 Make logging available
 ```php
 # Make true if you want to use logging
