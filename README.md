@@ -42,6 +42,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
             * [Wordpress Snippets](#wordpress-snippets)
         * Generic PHP Snippets
     * JavaScript Snippets
+    * [REST-Igniter Authorization](#rest-igniter-authorization)
 #### Deployment
 * [Command-line snippets](#command-line-snippets)
     * [Installing Wordpress](#installing-wordpress)
@@ -630,6 +631,99 @@ if (function_exists(custom_pagination)) {
 wp_reset_postdata();
 ?>
 ``` 
+- - -
+
+# REST-Igniter Snippets
+
+* Step 1. Create table for API keys
+```sql
+   CREATE TABLE `keys` (
+       `id` INT(11) NOT NULL AUTO_INCREMENT,
+       `user_id` INT(11) NOT NULL,
+       `key` VARCHAR(40) NOT NULL,
+       `level` INT(2) NOT NULL,
+       `ignore_limits` TINYINT(1) NOT NULL DEFAULT '0',
+       `is_private_key` TINYINT(1)  NOT NULL DEFAULT '0',
+       `ip_addresses` TEXT NULL DEFAULT NULL,
+       `date_created` INT(11) NOT NULL,
+       PRIMARY KEY (`id`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+* Step 2. On `application/config/rest.php` line `326`,
+Enable rest keys / authorization to `TRUE`
+```php
+$config['rest_enable_keys'] = TRUE;
+````
+* Step 3. On `application/config/rest.php` line `129`,
+From LDAP make auth_source into blank line 
+```php
+# Just empty the string
+# $config['auth_source'] = 'ldap';
+$config['auth_source'] = '';
+```
+* Step 4. On `application/config/rest.php` line `113`,
+From empty string, put to `basic`
+```php
+$config['rest_auth'] = 'basic';
+```
+
+* Step 5. On `application/config/rest.php` line `213`,
+Configure available credentials for API Access
+```php
+$config['rest_valid_logins'] = ['admin' => '1234'];
+```
+
+
+* Step 6. On `application/libraries/REST_Controller.php` line `764`,
+Make custom response for forbidden and unauthorized access
+```php
+public function response($data = NULL, $http_code = NULL)
+   {
+ob_start();
+       // If the HTTP status is not NULL, then cast as an integer
+       if ($http_code !== NULL)
+       {
+           // So as to be safe later on in the process
+           $http_code = (int) $http_code;
+
+           # Forbidden / Unauthorized message
+           header("Content-type:application/json");
+           http_response_code($http_code);
+           $msg = array('message' => ($http_code == 401) ? "Unauthorized" : "Forbidden");
+           $this->output->_display(json_encode($msg));
+           exit;
+           # / Forbidden / Unauthorized message
+       }
+       ...
+```
+
+* Step 7. (Optional) 
+Create `logs` Table for recording every access of the API
+```sql
+CREATE TABLE `logs` (
+       `id` INT(11) NOT NULL AUTO_INCREMENT,
+       `uri` VARCHAR(255) NOT NULL,
+       `method` VARCHAR(6) NOT NULL,
+       `params` TEXT DEFAULT NULL,
+       `api_key` VARCHAR(40) NOT NULL,
+       `ip_address` VARCHAR(45) NOT NULL,
+       `time` INT(11) NOT NULL,
+       `rtime` FLOAT DEFAULT NULL,
+       `authorized` VARCHAR(1) NOT NULL,
+       `response_code` smallint(3) DEFAULT '0',
+       PRIMARY KEY (`id`)
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+* Step 7.1 (Optional) table On `application/config/rest.php` line `406`
+Make logging available
+```php
+# Make true if you want to use logging
+# $config['rest_enable_logging'] = FALSE;
+$config['rest_enable_logging'] = TRUE;
+```
+
+
 - - -
 
 # Deployment
