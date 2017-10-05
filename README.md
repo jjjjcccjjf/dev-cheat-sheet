@@ -723,6 +723,7 @@ Make logging available
 $config['rest_enable_logging'] = TRUE;
 ```
 
+`Credits to JC sin(π)`
 
 - - -
 
