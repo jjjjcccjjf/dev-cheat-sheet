@@ -528,7 +528,22 @@ or
 get_the_terms($post->ID, "news_archive")[0]->slug;
 ```
 
+#### Password Hashing
+```
+<?php
+	    wp_hash_password($pass); # Magic function. Don't delete! Needed for wp default password hashing
+            $password_hashed = $row['user_pass']; #password from wp_users table
+            $plain_password = $_POST['password']; #password inputted from user
+            $wp_hasher = new PasswordHash(8, TRUE);
+            
+            if($wp_hasher->CheckPassword($plain_password, $password_hashed)) {
+               #success..
+            } else {
+               #fail..
+            }
 
+?>
+```
 #### Pagination
 
 Save this as `function-pagination.php`
