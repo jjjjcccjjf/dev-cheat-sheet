@@ -204,7 +204,10 @@ function formatPrice($n)
 }
 ```
 
-
+### Reorder arrays after unset()
+```php
+$array = array_values($array);
+```
  
 ### Wordpress
 
@@ -519,6 +522,13 @@ or
 	}
 ```
 
+#### Get the terms of a post (category? / taxonomy? #TODO)
+
+```php
+get_the_terms($post->ID, "news_archive")[0]->slug;
+```
+
+
 #### Pagination
 
 Save this as `function-pagination.php`
@@ -687,11 +697,13 @@ ob_start();
            $http_code = (int) $http_code;
 
            # Forbidden / Unauthorized message
-           header("Content-type:application/json");
-           http_response_code($http_code);
-           $msg = array('message' => ($http_code == 401) ? "Unauthorized" : "Forbidden");
-           $this->output->_display(json_encode($msg));
-           exit;
+	   if($http_code == 401 || $http_code == 403){
+               header("Content-type:application/json");
+               http_response_code($http_code);
+               $msg = array('message' => ($http_code == 401) ? "Unauthorized" : "Forbidden");
+               $this->output->_display(json_encode($msg));
+               exit;
+	   }
            # / Forbidden / Unauthorized message
        }
        ...
