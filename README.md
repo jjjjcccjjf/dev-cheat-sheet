@@ -2,7 +2,7 @@
 Just a compilation of kick-ass tools and code snippets to kickstart your development mostly for web and APIs. Contributions are open!
 
 ###### TODO:
-* Add cute emojis
+* Add cute emojis ^_^
 * Add frameworks
     * Codeigniter
     * Laravel
