@@ -384,7 +384,7 @@ Nested meta query example
     );
     # / Taxonomy filter
     $the_query = new WP_Query($args);
-```php
+```
 
 #### Get WP nav menu items
 
