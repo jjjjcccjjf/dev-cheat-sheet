@@ -371,7 +371,21 @@ Nested meta query example
 	    $price_range_filter_max,
 	  );
        
-       
+#### Custom taxonomy filter. Filter by slug / category
+```php
+    $args = array('post_type' => 'our_properties', 'posts_per_page' => -1, 'orderby' => 'post_title', 'order' => 'ASC');
+    # Taxonomy filter
+    $args['tax_query'] = array(
+      array(
+        'taxonomy' => 'project_classification',
+        'field' => 'slug', # could be slug or title
+        'terms' => $type,
+      )
+    );
+    # / Taxonomy filter
+    $the_query = new WP_Query($args);
+```php
+
 #### Get WP nav menu items
 
        /** variable for our menu object **/
@@ -530,20 +544,18 @@ get_the_terms($post->ID, "news_archive")[0]->slug;
 
 #### Password Hashing
 ```php
-	    wp_hash_password($pass); # Magic function. Don't delete! Needed for wp default password hashing
-            $password_hashed = $row['user_pass']; #password from wp_users table
-            $plain_password = $_POST['password']; #password inputted from user
-            $wp_hasher = new PasswordHash(8, TRUE);
-            
-            if($wp_hasher->CheckPassword($plain_password, $password_hashed)) {
-               #success..
-            } else {
-               #fail..
-            }
+  wp_hash_password($pass); # Magic function. Don't delete! Needed for wp default password hashing
+  $password_hashed = $row['user_pass']; #password from wp_users table
+  $plain_password = $_POST['password']; #password inputted from user
+  $wp_hasher = new PasswordHash(8, TRUE);
 
+  if($wp_hasher->CheckPassword($plain_password, $password_hashed)) {
+      #success..
+  } else {
+      #fail..
+  }
 ```
-Credits to Divine  
-
+`Credits to Divine`  
 
 #### Pagination
 
