@@ -513,6 +513,11 @@ or
 	if(is_singular(array('cpt_name'))){
 	}
 	
+#### Get custom post type label of a post
+```php
+$post_type = get_post_type_object( get_post_type( $data->ID ))->label;
+```
+	
 #### Args for searching WP Query
 
         $args = array('post_type' => array('page', 'project', 'location', 'bank'),
