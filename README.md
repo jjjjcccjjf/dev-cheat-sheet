@@ -10,6 +10,20 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * Add REST Crud
 * jp_lib
 
+---
+
+# Rearrange these pag may time:
+
+```php
+# For setting dynamic origin
+$http_origin = $_SERVER['HTTP_ORIGIN'];
+if ($http_origin == "https://alveoland.com.ph" ||
+   $http_origin == "https://www.alveoland.com.ph")
+header("AMP-Access-Control-Allow-Source-Origin: $http_origin");
+# / For setting dynamic origin
+```
+---
+
 # Contents 
 #### Development Tools
 * [Text Editors / Integrated Development Environment (IDE)](#text-editors--integrated-development-environment-ide)
