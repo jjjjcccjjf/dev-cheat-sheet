@@ -1,7 +1,13 @@
-# Development cheat sheet
+# Introduction
 Just a compilation of kick-ass tools and code snippets to kickstart your development mostly for web and APIs. Contributions are open!
 
-###### TODO:
+    “Never memorize something that you can look up.”
+
+    ― Albert Einstein
+
+
+
+# TODO:
 * Add cute emojis
 * Add frameworks
     * Codeigniter
@@ -11,19 +17,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * jp_lib
 
 ---
-
-# Rearrange these pag may time:
-
-```php
-# For setting dynamic origin
-$http_origin = $_SERVER['HTTP_ORIGIN'];
-if ($http_origin == "https://alveoland.com.ph" ||
-   $http_origin == "https://www.alveoland.com.ph")
-header("AMP-Access-Control-Allow-Source-Origin: $http_origin");
-# / For setting dynamic origin
-```
----
-
+ 
 # Contents 
 #### Development Tools
 * [Text Editors / Integrated Development Environment (IDE)](#text-editors--integrated-development-environment-ide)
@@ -57,6 +51,7 @@ header("AMP-Access-Control-Allow-Source-Origin: $http_origin");
         * Generic PHP Snippets
     * JavaScript Snippets
     * [REST-Igniter Authorization](#rest-igniter-authorization)
+    * [Accelerated Mobile Pages (AMP)](#accelerated-mobile-pages-amp)
 #### Deployment
 * [Command-line snippets](#command-line-snippets)
     * [Installing Wordpress](#installing-wordpress)
@@ -792,6 +787,19 @@ $config['rest_enable_logging'] = TRUE;
 
 `Credits to JC sin(π)`
 
+- - -
+ 
+# Accelerated Mobile Pages (AMP)
+
+## For setting dynamic origin
+```php
+# For setting dynamic origin
+$http_origin = $_SERVER['HTTP_ORIGIN'];
+if ($http_origin == "https://alveoland.com.ph" ||
+   $http_origin == "https://www.alveoland.com.ph")
+header("AMP-Access-Control-Allow-Source-Origin: $http_origin");
+# / For setting dynamic origin
+```
 - - -
 
 # Deployment
