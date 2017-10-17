@@ -140,6 +140,14 @@ Git is required for other Git clients to work. But most of the time, their insta
 #rc-imageselect, .g-recaptcha {transform:scale(0.8);-webkit-transform:scale(0.8);transform-origin:0 0;-webkit-transform-origin:0 0;}
 ```
 
+#### Make image center in div
+```css
+div img {
+    margin: auto;
+    display: block;
+}
+```
+
 ### Animation Snippets
 
 #### Smooth scrolling on anchors on the same page
