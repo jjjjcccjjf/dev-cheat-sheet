@@ -61,6 +61,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * [Git Cheatsheet](https://github.com/jjjjcccjjf/dev-cheat-sheet/blob/master/cheat-sheets/git-cheat-sheet.md)
 * [Markdown Cheatsheet](https://github.com/jjjjcccjjf/dev-cheatsheet/blob/master/cheat-sheets/markdown-cheat-sheet.md)
 * [Regular Expressions (RegEx)](https://github.com/zeeshanu/learn-regex)
+* [Git commit conventions](https://chris.beams.io/posts/git-commit/)
 - - -
 
 # Development Tools
