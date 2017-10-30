@@ -253,7 +253,7 @@ $ sed -i -e 's/Twenty Seventeen/my-project/g' my-project/style.css
 $ sed -i '16,$d' my-project/style.css
 $ rm my-project/style.css.bak
 ```
-6. Finally, don't forget to log-on to WP Admin, go to Appearance > Themes, and select your new theme
+1. Finally, don't forget to log-on to WP Admin, go to Appearance > Themes, and select your new theme
 
 #### Setup a Front Page
 1. Copy and replace the contents of `front-page.php` with this.
@@ -300,8 +300,9 @@ $ rm my-project/style.css.bak
        get_footer();
        
 ### Wordpress Plugins
+Just search them in the wordpress plugin database in your WP admin dashboard. WP Admin > Plugins > Add new.
 
-#### Common wordpress plugins.
+#### Common wordpress plugins
 Common WP plugins for a generic website
 
 | Plugin name                           | Description                                  |
@@ -311,6 +312,15 @@ Common WP plugins for a generic website
 | Custom Post Type UI                   | For custom post types                        |
 | [Advanced Custom Fields PRO](https://drive.google.com/file/d/0B_bwOHDZvZw-UkJZYUxRRWFHUUE/view?usp=sharing) | For additional custom fields                 |  
 | Enable Media Replace | For replacing images in Media Library |
+
+#### Plugins for Site Optimization and SEO
+These are the plugins used commonly to boost page speed score and fixing SEO related issues
+
+| Plugin name                           | Description                                  |
+| ------------------------------------- | -------------------------------------------- |
+| Redirection                           | Used to handle 301 redirects                 |
+| Autoptimize                           | For minifying CSS & HTML                     |
+| W3 Total Cache                        | Caching plugin                               |
 
 #### Advanced wordpress plugins
 TODO
