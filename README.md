@@ -1,4 +1,4 @@
-# Introduction
+# Dev Cheat Sheet 👻😵🙃
 Just a compilation of kick-ass tools and code snippets to kickstart your development mostly for web and APIs. Contributions are open!
 
     “Never memorize something that you can look up.”
@@ -68,6 +68,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 - - -
 
 # Development Tools
+⬆⏏⏫
 
 ## Text Editors / Integrated Development Environment (IDE)
 ## Atom
