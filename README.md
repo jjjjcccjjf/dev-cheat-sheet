@@ -450,6 +450,33 @@ or
        <p><?php echo $obj['another_field'];?></p>
      <?php } ?>
  
+#### Accessing the Image Array Custom Field of Wordpress
+```php
+array(18) {
+    ["ID"] => int(25)["id"] => int(25)["title"] => string(7)
+    "slider1" ["filename"] => string(11)
+    "slider1.jpg" ["url"] => string(59)
+    "http://localhost/bgc/wp-content/uploads/2017/10/slider1.jpg" ["alt"] => string(0)
+    "" ["author"] => string(1)
+    "1" ["description"] => string(0)
+    "" ["caption"] => string(0)
+    "" ["name"] => string(7)
+    "slider1" ["date"] => string(19)
+    "2017-10-30 08:24:36" ["modified"] => string(19)
+    "2017-10-30 08:24:36" ["mime_type"] => string(10)
+    "image/jpeg" ["type"] => string(5)
+    "image" ["icon"] => string(57)
+    "http://localhost/bgc/wp-includes/images/media/default.png" ["width"] => int(1366)["height"] => int(537)["sizes"] => array(18) {
+        ["thumbnail"] => string(67)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-150x150.jpg" ["thumbnail-width"] => int(150)["thumbnail-height"] => int(150)["medium"] => string(67)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-300x118.jpg" ["medium-width"] => int(300)["medium-height"] => int(118)["medium_large"] => string(67)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-768x302.jpg" ["medium_large-width"] => int(525)["medium_large-height"] => int(206)["large"] => string(68)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-1024x403.jpg" ["large-width"] => int(525)["large-height"] => int(207)["twentyseventeen-featured-image"] => string(59)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1.jpg" ["twentyseventeen-featured-image-width"] => int(1366)["twentyseventeen-featured-image-height"] => int(537)["twentyseventeen-thumbnail-avatar"] => string(67)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-100x100.jpg" ["twentyseventeen-thumbnail-avatar-width"] => int(100)["twentyseventeen-thumbnail-avatar-height"] => int(100)
+    }
+}
+```
 #### Advanced Custom Fields Nested Repeater Loop 
 (parent_repeater->child_repeater->child_repeater_items)
 
