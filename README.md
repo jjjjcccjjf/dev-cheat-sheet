@@ -68,7 +68,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 - - -
 
 # Development Tools
-⬆⏏⏫
+[⬆ Back to top](#dev-cheat-sheet-)
 
 ## Text Editors / Integrated Development Environment (IDE)
 ## Atom
