@@ -278,9 +278,13 @@ $ rm my-project/style.css.bak
 
 #### Header and Footer
 1. Personalize your `header.php` and `footer.php`
+1. Replace/Import your assets (css, js, images) inside `/your-theme-name/assets/` folder
 1. Don't forget to put `<?php wp_head(); ?>` before the closing `</head>` of your header tag
 1. Don't forget to put `<?php wp_footer(); ?>` before the closing `</body>` of your body tag
-1. Replace/Import your assets (css, js, images) inside `/your-theme-name/assets/` folder
+1. Use this script for dynamic url in our includes
+       
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.css">
+	
 1. Make sure you have this minimum code in every template
        
        <?php
@@ -295,10 +299,6 @@ $ rm my-project/style.css.bak
        endwhile;
        get_footer();
        
- 1. Use this script for dynamic url in our includes
-       
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/styles.css">
-	
 ### Wordpress Plugins
 
 #### Common wordpress plugins.
