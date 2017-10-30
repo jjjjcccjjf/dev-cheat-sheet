@@ -15,6 +15,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * Add PHP & Web references
 * Add REST Crud
 * jp_lib
+* __Add back to top__
 
 ---
  
@@ -239,18 +240,20 @@ After [installing wordpress](#installing-wordpress), edit your `wp-config.php` a
 1. Rename the theme to your desired theme name
 1. In your theme directory, open `style.css`
 1. On `line 2`, replace `Theme Name: Twentyseventeen` to `Theme Name: Your Theme Name`
-1. Delete all styles (Because this will override your custom theme style)
+1. Delete all styles (Because this will override your custom theme style
 
 or you can just run this script...
-
-       cd wp-content
-       cd themes
-       rm twentyfifteen -r
-       rm twentysixteen -r
-       mv twentyseventeen my-project 
-       sed -i -e 's/Twenty Seventeen/my-project/g' my-project/style.css
-       sed -i '16,$d' my-project/style.css
-       rm my-project/style.css.bak
+```bash
+$ cd wp-content
+$ cd themes
+$ rm twentyfifteen -r
+$ rm twentysixteen -r
+$ mv twentyseventeen my-project 
+$ sed -i -e 's/Twenty Seventeen/my-project/g' my-project/style.css
+$ sed -i '16,$d' my-project/style.css
+$ rm my-project/style.css.bak
+```
+6. Finally, don't forget to log-on to WP Admin, go to Appearance > Themes, and select your new theme
 
 #### Setup a Front Page
 1. Copy and replace the contents of `front-page.php` with this.
@@ -795,6 +798,7 @@ $config['rest_enable_logging'] = TRUE;
 # Accelerated Mobile Pages (AMP)
 
 ## For setting dynamic origin
+Put this in your API
 ```php
 # For setting dynamic origin
 $http_origin = $_SERVER['HTTP_ORIGIN'];
@@ -814,46 +818,46 @@ On windows, you need to launch [git bash](https://git-scm.com/downloads). On Mac
 ### Installing Wordpress
 Copy and paste the ff. to your Terminal
 ```bash
-       cd /path/to/your/environment/
-       curl -O https://wordpress.org/latest.zip
-       unzip latest.zip
-       rm latest.zip
-       mv wordpress my-project
-       cd my-project
-       cp -i wp-config-sample.php wp-config.php
+$ cd /path/to/your/environment/
+$ curl -O https://wordpress.org/latest.zip
+$ unzip latest.zip
+$ rm latest.zip
+$ mv wordpress my-project
+$ cd my-project
+$ cp -i wp-config-sample.php wp-config.php
 ```       
 
 ### Setup your Version Control
 Assuming you're inside your project directory
 ```bash
-       git init
-       git add .
-       git commit -m "initial commit"
-       git remote add origin https://github.com/your-username/my-project.git
-       git push -u origin master
+$ git init
+$ git add .
+$ git commit -m "initial commit"
+$ git remote add origin https://github.com/your-username/my-project.git
+$ git push -u origin master
 ```
 
 ## .htaccess
 #### Regular wordpress htaccess
 (Optional) For fixing forbidden in wp-admin
 ```htaccess
-       # BEGIN WordPress
-       # Uncomment this block if you cannot access wp-admin
-       # <Files wp-login.php>
-       # Order Deny,Allow
-       # Deny from all
-       # Allow from all
-       # </Files>
-       # / Uncomment this block if you cannot access wp-admin
-       <IfModule mod_rewrite.c>
-       RewriteEngine On
-       RewriteBase /
-       RewriteRule ^index\.php$ - [L]
-       RewriteCond %{REQUEST_FILENAME} !-f
-       RewriteCond %{REQUEST_FILENAME} !-d
-       RewriteRule . /index.php [L]
-       </IfModule>
-       # END WordPress
+# BEGIN WordPress
+# Uncomment this block if you cannot access wp-admin
+# <Files wp-login.php>
+# Order Deny,Allow
+# Deny from all
+# Allow from all
+# </Files>
+# / Uncomment this block if you cannot access wp-admin
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress
 ```
 
 ### Leverage browser caching
