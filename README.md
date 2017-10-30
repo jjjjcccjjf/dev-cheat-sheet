@@ -33,6 +33,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * [Version Control Clients](#version-control-clients)
    * [SourceTree](https://www.sourcetreeapp.com/)
    * [Git Kraken](https://www.gitkraken.com/)
+* Other Tools
    * [Git Bash (Terminal Interface)](https://git-scm.com/downloads)
 #### Standards
 * [PHP Standard Recommendations (PSR)](http://www.php-fig.org/psr/)
@@ -808,7 +809,7 @@ header("AMP-Access-Control-Allow-Source-Origin: $http_origin");
 
 ## Command-line snippets
 To be able to fire up these snippets, you must boot up your terminal first. 
-On windows, you need to launch `git bash`. On Mac, click on the `spotlight` then type in `terminal`.
+On windows, you need to launch [git bash](https://git-scm.com/downloads). On Mac, click on the `spotlight` then type in `terminal`.
   
 ### Installing Wordpress
 Copy and paste the ff. to your Terminal
