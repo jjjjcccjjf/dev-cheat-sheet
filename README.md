@@ -589,6 +589,21 @@ $post_type = get_post_type_object( get_post_type( $data->ID ))->label;
        $args = array('post_type' => 'service', 'posts_per_page' => -1);
        $the_query = new WP_Query($args);
        echo $the_query->post_count; # The post count
+       
+#### Dealing with Featured Image 
+```php
+//Default WordPress
+the_post_thumbnail( 'thumbnail' );     // Thumbnail (150 x 150 hard cropped)
+the_post_thumbnail( 'medium' );        // Medium resolution (300 x 300 max height 300px)
+the_post_thumbnail( 'medium_large' );  // Medium Large (added in WP 4.4) resolution (768 x 0 infinite height)
+the_post_thumbnail( 'large' );         // Large resolution (1024 x 1024 max height 1024px)
+the_post_thumbnail( 'full' );          // Full resolution (original size uploaded)
+ 
+//With WooCommerce
+the_post_thumbnail( 'shop_thumbnail' ); // Shop thumbnail (180 x 180 hard cropped)
+the_post_thumbnail( 'shop_catalog' );   // Shop catalog (300 x 300 hard cropped)
+the_post_thumbnail( 'shop_single' );    // Shop single (600 x 600 hard cropped)
+```
 	 
 #### Displaying options from an Advance Custom Field
 
