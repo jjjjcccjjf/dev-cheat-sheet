@@ -449,34 +449,7 @@ or
        <p><?php echo $obj['your_field']; ?></p>
        <p><?php echo $obj['another_field'];?></p>
      <?php } ?>
- 
-#### Accessing the Image Array Custom Field of Wordpress
-```php
-array(18) {
-    ["ID"] => int(25)["id"] => int(25)["title"] => string(7)
-    "slider1" ["filename"] => string(11)
-    "slider1.jpg" ["url"] => string(59)
-    "http://localhost/bgc/wp-content/uploads/2017/10/slider1.jpg" ["alt"] => string(0)
-    "" ["author"] => string(1)
-    "1" ["description"] => string(0)
-    "" ["caption"] => string(0)
-    "" ["name"] => string(7)
-    "slider1" ["date"] => string(19)
-    "2017-10-30 08:24:36" ["modified"] => string(19)
-    "2017-10-30 08:24:36" ["mime_type"] => string(10)
-    "image/jpeg" ["type"] => string(5)
-    "image" ["icon"] => string(57)
-    "http://localhost/bgc/wp-includes/images/media/default.png" ["width"] => int(1366)["height"] => int(537)["sizes"] => array(18) {
-        ["thumbnail"] => string(67)
-        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-150x150.jpg" ["thumbnail-width"] => int(150)["thumbnail-height"] => int(150)["medium"] => string(67)
-        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-300x118.jpg" ["medium-width"] => int(300)["medium-height"] => int(118)["medium_large"] => string(67)
-        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-768x302.jpg" ["medium_large-width"] => int(525)["medium_large-height"] => int(206)["large"] => string(68)
-        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-1024x403.jpg" ["large-width"] => int(525)["large-height"] => int(207)["twentyseventeen-featured-image"] => string(59)
-        "http://localhost/bgc/wp-content/uploads/2017/10/slider1.jpg" ["twentyseventeen-featured-image-width"] => int(1366)["twentyseventeen-featured-image-height"] => int(537)["twentyseventeen-thumbnail-avatar"] => string(67)
-        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-100x100.jpg" ["twentyseventeen-thumbnail-avatar-width"] => int(100)["twentyseventeen-thumbnail-avatar-height"] => int(100)
-    }
-}
-```
+
 #### Advanced Custom Fields Nested Repeater Loop 
 (parent_repeater->child_repeater->child_repeater_items)
 
@@ -621,6 +594,184 @@ the_post_thumbnail( 'shop_single' );    // Shop single (600 x 600 hard cropped)
 
 ```php
 get_the_terms($post->ID, "news_archive")[0]->slug;
+```
+
+## Tired of var_dump()-ing? Here's some common WP object/array structures
+ 
+#### Image array custom field structure
+```php
+array(18) {
+    ["ID"] => int(25)["id"] => int(25)["title"] => string(7)
+    "slider1" ["filename"] => string(11)
+    "slider1.jpg" ["url"] => string(59)
+    "http://localhost/bgc/wp-content/uploads/2017/10/slider1.jpg" ["alt"] => string(0)
+    "" ["author"] => string(1)
+    "1" ["description"] => string(0)
+    "" ["caption"] => string(0)
+    "" ["name"] => string(7)
+    "slider1" ["date"] => string(19)
+    "2017-10-30 08:24:36" ["modified"] => string(19)
+    "2017-10-30 08:24:36" ["mime_type"] => string(10)
+    "image/jpeg" ["type"] => string(5)
+    "image" ["icon"] => string(57)
+    "http://localhost/bgc/wp-includes/images/media/default.png" ["width"] => int(1366)["height"] => int(537)["sizes"] => array(18) {
+        ["thumbnail"] => string(67)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-150x150.jpg" ["thumbnail-width"] => int(150)["thumbnail-height"] => int(150)["medium"] => string(67)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-300x118.jpg" ["medium-width"] => int(300)["medium-height"] => int(118)["medium_large"] => string(67)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-768x302.jpg" ["medium_large-width"] => int(525)["medium_large-height"] => int(206)["large"] => string(68)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-1024x403.jpg" ["large-width"] => int(525)["large-height"] => int(207)["twentyseventeen-featured-image"] => string(59)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1.jpg" ["twentyseventeen-featured-image-width"] => int(1366)["twentyseventeen-featured-image-height"] => int(537)["twentyseventeen-thumbnail-avatar"] => string(67)
+        "http://localhost/bgc/wp-content/uploads/2017/10/slider1-100x100.jpg" ["twentyseventeen-thumbnail-avatar-width"] => int(100)["twentyseventeen-thumbnail-avatar-height"] => int(100)
+    }
+}
+```
+
+#### The query structure
+```php
+object(WP_Query) #875 (49) { ["query"]= > array(2) {
+    ["post_type"] => string(7)
+    "article" ["posts_per_page"] => int(-1)
+}["query_vars"] => array(64) {
+    ["post_type"] => string(7)
+    "article" ["posts_per_page"] => int(-1)["error"] => string(0)
+    "" ["m"] => string(0)
+    "" ["p"] => int(0)["post_parent"] => string(0)
+    "" ["subpost"] => string(0)
+    "" ["subpost_id"] => string(0)
+    "" ["attachment"] => string(0)
+    "" ["attachment_id"] => int(0)["name"] => string(0)
+    "" ["static"] => string(0)
+    "" ["pagename"] => string(0)
+    "" ["page_id"] => int(0)["second"] => string(0)
+    "" ["minute"] => string(0)
+    "" ["hour"] => string(0)
+    "" ["day"] => int(0)["monthnum"] => int(0)["year"] => int(0)["w"] => int(0)["category_name"] => string(0)
+    "" ["tag"] => string(0)
+    "" ["cat"] => string(0)
+    "" ["tag_id"] => string(0)
+    "" ["author"] => string(0)
+    "" ["author_name"] => string(0)
+    "" ["feed"] => string(0)
+    "" ["tb"] => string(0)
+    "" ["paged"] => int(0)["meta_key"] => string(0)
+    "" ["meta_value"] => string(0)
+    "" ["preview"] => string(0)
+    "" ["s"] => string(0)
+    "" ["sentence"] => string(0)
+    "" ["title"] => string(0)
+    "" ["fields"] => string(0)
+    "" ["menu_order"] => string(0)
+    "" ["embed"] => string(0)
+    "" ["category__in"] => array(0) {}["category__not_in"] => array(0) {}["category__and"] => array(0) {}["post__in"] => array(0) {}["post__not_in"] => array(0) {}["post_name__in"] => array(0) {}["tag__in"] => array(0) {}["tag__not_in"] => array(0) {}["tag__and"] => array(0) {}["tag_slug__in"] => array(0) {}["tag_slug__and"] => array(0) {}["post_parent__in"] => array(0) {}["post_parent__not_in"] => array(0) {}["author__in"] => array(0) {}["author__not_in"] => array(0) {}["ignore_sticky_posts"] => bool(false)["suppress_filters"] => bool(false)["cache_results"] => bool(true)["update_post_term_cache"] => bool(true)["lazy_load_term_meta"] => bool(true)["update_post_meta_cache"] => bool(true)["nopaging"] => bool(true)["comments_per_page"] => string(2)
+    "50" ["no_found_rows"] => bool(false)["order"] => string(4)
+    "DESC"
+}["tax_query"] => object(WP_Tax_Query) #878 (6) { ["queries"]= > array(0) {}["relation"] => string(3)
+"AND" ["table_aliases": protected] => array(0) {}["queried_terms"] => array(0) {}["primary_table"] => string(8)
+"wp_posts" ["primary_id_column"] => string(2)
+"ID"
+}["meta_query"] => object(WP_Meta_Query) #876 (9) { ["queries"]= > array(0) {}["relation"] => NULL["meta_table"] => NULL["meta_id_column"] => NULL["primary_table"] => NULL["primary_id_column"] => NULL["table_aliases": protected] => array(0) {}["clauses": protected] => array(0) {}["has_or_relation": protected] => bool(false)
+}["date_query"] => bool(false)["request"] => string(231)
+"SELECT wp_posts.* FROM wp_posts WHERE 1=1 AND wp_posts.post_type = 'article' AND (wp_posts.post_status = 'publish' OR wp_posts.post_status = 'acf-disabled' OR wp_posts.post_status = 'private') ORDER BY wp_posts.post_date DESC " ["posts"] => array(3) {
+    [0] => object(WP_Post) #880 (24) { ["ID"]= > int(37)["post_author"] => string(1)
+    "1" ["post_date"] => string(19)
+    "2017-11-02 06:30:51" ["post_date_gmt"] => string(19)
+    "2017-11-02 06:30:51" ["post_content"] => string(0)
+    "" ["post_title"] => string(14)
+    "Black Survival" ["post_excerpt"] => string(0)
+    "" ["post_status"] => string(7)
+    "publish" ["comment_status"] => string(6)
+    "closed" ["ping_status"] => string(6)
+    "closed" ["post_password"] => string(0)
+    "" ["post_name"] => string(14)
+    "black-survival" ["to_ping"] => string(0)
+    "" ["pinged"] => string(0)
+    "" ["post_modified"] => string(19)
+    "2017-11-02 06:30:51" ["post_modified_gmt"] => string(19)
+    "2017-11-02 06:30:51" ["post_content_filtered"] => string(0)
+    "" ["post_parent"] => int(0)["guid"] => string(49)
+    "http://localhost/bgc/?post_type=article&p=37" ["menu_order"] => int(0)["post_type"] => string(7)
+    "article" ["post_mime_type"] => string(0)
+    "" ["comment_count"] => string(1)
+    "0" ["filter"] => string(3)
+    "raw"
+}[1] => object(WP_Post) #872 (24) { ["ID"]= > int(35)["post_author"] => string(1)
+"1" ["post_date"] => string(19)
+"2017-11-02 06:18:28" ["post_date_gmt"] => string(19)
+"2017-11-02 06:18:28" ["post_content"] => string(0)
+"" ["post_title"] => string(6)
+"Test 2" ["post_excerpt"] => string(0)
+"" ["post_status"] => string(7)
+"publish" ["comment_status"] => string(6)
+"closed" ["ping_status"] => string(6)
+"closed" ["post_password"] => string(0)
+"" ["post_name"] => string(6)
+"test-2" ["to_ping"] => string(0)
+"" ["pinged"] => string(0)
+"" ["post_modified"] => string(19)
+"2017-11-02 06:18:28" ["post_modified_gmt"] => string(19)
+"2017-11-02 06:18:28" ["post_content_filtered"] => string(0)
+"" ["post_parent"] => int(0)["guid"] => string(49)
+"http://localhost/bgc/?post_type=article&p=35" ["menu_order"] => int(0)["post_type"] => string(7)
+"article" ["post_mime_type"] => string(0)
+"" ["comment_count"] => string(1)
+"0" ["filter"] => string(3)
+"raw"
+}[2] => object(WP_Post) #869 (24) { ["ID"]= > int(22)["post_author"] => string(1)
+"1" ["post_date"] => string(19)
+"2017-10-30 08:15:13" ["post_date_gmt"] => string(19)
+"2017-10-30 08:15:13" ["post_content"] => string(0)
+"" ["post_title"] => string(4)
+"Test" ["post_excerpt"] => string(0)
+"" ["post_status"] => string(7)
+"publish" ["comment_status"] => string(6)
+"closed" ["ping_status"] => string(6)
+"closed" ["post_password"] => string(0)
+"" ["post_name"] => string(4)
+"test" ["to_ping"] => string(0)
+"" ["pinged"] => string(0)
+"" ["post_modified"] => string(19)
+"2017-11-02 04:07:43" ["post_modified_gmt"] => string(19)
+"2017-11-02 04:07:43" ["post_content_filtered"] => string(0)
+"" ["post_parent"] => int(0)["guid"] => string(49)
+"http://localhost/bgc/?post_type=article&p=22" ["menu_order"] => int(0)["post_type"] => string(7)
+"article" ["post_mime_type"] => string(0)
+"" ["comment_count"] => string(1)
+"0" ["filter"] => string(3)
+"raw"
+}
+}["post_count"] => int(3)["current_post"] => int(-1)["in_the_loop"] => bool(false)["post"] => object(WP_Post) #880 (24) { ["ID"]= > int(37)["post_author"] => string(1)
+"1" ["post_date"] => string(19)
+"2017-11-02 06:30:51" ["post_date_gmt"] => string(19)
+"2017-11-02 06:30:51" ["post_content"] => string(0)
+"" ["post_title"] => string(14)
+"Black Survival" ["post_excerpt"] => string(0)
+"" ["post_status"] => string(7)
+"publish" ["comment_status"] => string(6)
+"closed" ["ping_status"] => string(6)
+"closed" ["post_password"] => string(0)
+"" ["post_name"] => string(14)
+"black-survival" ["to_ping"] => string(0)
+"" ["pinged"] => string(0)
+"" ["post_modified"] => string(19)
+"2017-11-02 06:30:51" ["post_modified_gmt"] => string(19)
+"2017-11-02 06:30:51" ["post_content_filtered"] => string(0)
+"" ["post_parent"] => int(0)["guid"] => string(49)
+"http://localhost/bgc/?post_type=article&p=37" ["menu_order"] => int(0)["post_type"] => string(7)
+"article" ["post_mime_type"] => string(0)
+"" ["comment_count"] => string(1)
+"0" ["filter"] => string(3)
+"raw"
+}["comment_count"] => int(0)["current_comment"] => int(-1)["found_posts"] => int(3)["max_num_pages"] => int(0)["max_num_comment_pages"] => int(0)["is_single"] => bool(false)["is_preview"] => bool(false)["is_page"] => bool(false)["is_archive"] => bool(false)["is_date"] => bool(false)["is_year"] => bool(false)["is_month"] => bool(false)["is_day"] => bool(false)["is_time"] => bool(false)["is_author"] => bool(false)["is_category"] => bool(false)["is_tag"] => bool(false)["is_tax"] => bool(false)["is_search"] => bool(false)["is_feed"] => bool(false)["is_comment_feed"] => bool(false)["is_trackback"] => bool(false)["is_home"] => bool(true)["is_404"] => bool(false)["is_embed"] => bool(false)["is_paged"] => bool(false)["is_admin"] => bool(false)["is_attachment"] => bool(false)["is_singular"] => bool(false)["is_robots"] => bool(false)["is_posts_page"] => bool(false)["is_post_type_archive"] => bool(false)["query_vars_hash": "WP_Query": private] => string(32)
+"588d5ef44472f184074f334ee6c62d1a" ["query_vars_changed": "WP_Query": private] => bool(false)["thumbnails_cached"] => bool(false)["stopwords": "WP_Query": private] => NULL["compat_fields": "WP_Query": private] => array(2) {
+    [0] => string(15)
+    "query_vars_hash" [1] => string(18)
+    "query_vars_changed"
+}["compat_methods": "WP_Query": private] => array(2) {
+    [0] => string(16)
+    "init_query_flags" [1] => string(15)
+    "parse_tax_query"
+}
+}
 ```
 
 #### Password Hashing
