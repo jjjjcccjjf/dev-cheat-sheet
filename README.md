@@ -1076,6 +1076,7 @@ $ cp -i wp-config-sample.php wp-config.php
 
 ### Setup your Version Control
 [⬆ Back to top](#dev-cheat-sheet-)
+
 Assuming you're inside your project directory
 ```bash
 $ git init
@@ -1086,7 +1087,7 @@ $ git push -u origin master
 ```
 
 ## .htaccess
-[⬆ Back to top](#dev-cheat-sheet-)
+[⬆ Back to top](#dev-cheat-sheet-)  
 
 #### Regular wordpress htaccess
 (Optional) For fixing forbidden in wp-admin
