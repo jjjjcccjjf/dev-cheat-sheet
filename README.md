@@ -50,10 +50,15 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
             * [Branding your theme](#branding-your-theme)
             * [Common wordpress plugins](#common-wordpress-plugins)
             * [Wordpress Snippets](#wordpress-snippets)
+            * [Var dump information / Common WP Object / Array structures](#tired-of-var_dump-ing-heres-some-common-wp-objectarray-structures)
         * Generic PHP Snippets
     * JavaScript Snippets
     * [REST-Igniter Authorization](#rest-igniter-authorization)
     * [Accelerated Mobile Pages (AMP)](#accelerated-mobile-pages-amp)
+
+#### API
+* [Twitter API](#twitter-api)
+
 #### Deployment
 * [Command-line snippets](#command-line-snippets)
     * [Installing Wordpress](#installing-wordpress)
@@ -68,9 +73,10 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 - - -
 
 # Development Tools
-[⬆ Back to top](#dev-cheat-sheet-)
 
 ## Text Editors / Integrated Development Environment (IDE)
+[⬆ Back to top](#dev-cheat-sheet-)
+
 ## Atom
 What I like about atom is its IDE-like experience and it also has a lot of nice plugins that I really think is essential for an efficient development workflow. This is my preffered Text Editor as well.
 #### Pros:
@@ -106,6 +112,8 @@ Haven't used this much yet. So I don't have much opinion about it.
 
 - - -
 # Chrome Extensions
+[⬆ Back to top](#dev-cheat-sheet-)
+
 ## var_masterpiece
 For easier debugging your var_dump results
 
@@ -120,6 +128,8 @@ Postman is a GUI for testing your API. This is important if you are interacting 
 [View in Chrome Store](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
 - - -
 # Version Control Clients
+[⬆ Back to top](#dev-cheat-sheet-)
+
 ## SourceTree
 SourceTree is a GIT Client by Atlassian.
 [View Website](https://www.sourcetreeapp.com/)
@@ -133,6 +143,8 @@ Git is required for other Git clients to work. But most of the time, their insta
 # Code Snippets
 
 # Front-end
+[⬆ Back to top](#dev-cheat-sheet-)
+
 ### CSS Snippets
 
 #### Re-captcha css
@@ -197,6 +209,7 @@ Just paste this on your footer and it will work
  
 # Back-end
 ### PHP Snippets
+[⬆ Back to top](#dev-cheat-sheet-)
 
 #### Number formatting
 Function for formatting price. 20000 -> 20K, 1000000 to 1M, etc
@@ -232,6 +245,7 @@ $array = array_values($array);
 ```
  
 ### Wordpress
+[⬆ Back to top](#dev-cheat-sheet-)
 
 After [installing wordpress](#installing-wordpress), edit your `wp-config.php` and fill-out appropriate credentials
        
@@ -601,9 +615,11 @@ the_post_thumbnail( 'shop_single' );    // Shop single (600 x 600 hard cropped)
 ```php
 get_the_terms($post->ID, "news_archive")[0]->slug;
 ```
+---
 
 ## Tired of var_dump()-ing? Here's some common WP object/array structures
- 
+[⬆ Back to top](#dev-cheat-sheet-)
+
 #### Image array custom field structure
 ```php
 array(18) {
@@ -632,7 +648,7 @@ array(18) {
 }
 ```
 
-#### The query structure
+#### `$the_query` structure
 ```php
 object(WP_Query) #875 (49) { ["query"]= > array(2) {
     ["post_type"] => string(7)
@@ -780,7 +796,11 @@ object(WP_Query) #875 (49) { ["query"]= > array(2) {
 }
 ```
 
+---
+
 #### Password Hashing
+[⬆ Back to top](#dev-cheat-sheet-)
+
 ```php
   wp_hash_password($pass); # Magic function. Don't delete! Needed for wp default password hashing
   $password_hashed = $row['user_pass']; #password from wp_users table
@@ -796,6 +816,7 @@ object(WP_Query) #875 (49) { ["query"]= > array(2) {
 `Credits to Divine`  
 
 #### Pagination
+[⬆ Back to top](#dev-cheat-sheet-)
 
 Save this as `function-pagination.php`
 ```php
@@ -910,6 +931,7 @@ wp_reset_postdata();
 - - -
 
 # REST-Igniter Authorization
+[⬆ Back to top](#dev-cheat-sheet-)
 
 * Step 1. Create table for API keys
 ```sql
@@ -1019,7 +1041,22 @@ header("AMP-Access-Control-Allow-Source-Origin: $http_origin");
 ```
 - - -
 
+# API
+## Twitter API
+[⬆ Back to top](#dev-cheat-sheet-)
+#### Getting tweets from a certain account
+```html
+<!-- Twitter block -->
+<a class="twitter-timeline" data-width="650"
+data-height="270" href="https://twitter.com/jjjjcccjjf">Tweets by @jjjjcccjjf</a>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!-- /Twitter block -->
+```
+
+---
+
 # Deployment
+[⬆ Back to top](#dev-cheat-sheet-)
 
 ## Command-line snippets
 To be able to fire up these snippets, you must boot up your terminal first. 
@@ -1038,6 +1075,7 @@ $ cp -i wp-config-sample.php wp-config.php
 ```       
 
 ### Setup your Version Control
+[⬆ Back to top](#dev-cheat-sheet-)
 Assuming you're inside your project directory
 ```bash
 $ git init
@@ -1048,6 +1086,8 @@ $ git push -u origin master
 ```
 
 ## .htaccess
+[⬆ Back to top](#dev-cheat-sheet-)
+
 #### Regular wordpress htaccess
 (Optional) For fixing forbidden in wp-admin
 ```htaccess
