@@ -551,7 +551,13 @@ or
 ```php
 $post_type = get_post_type_object( get_post_type( $data->ID ))->label;
 ```
-	
+
+#### Exclude a post from the_query
+```php
+$args = array('post_type' => 'article', 'posts_per_page' => $post_count,
+ 'offset' => 1);
+```
+
 #### Args for searching WP Query
 
         $args = array('post_type' => array('page', 'project', 'location', 'bank'),
