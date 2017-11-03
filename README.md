@@ -58,6 +58,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 
 #### API
 * [Twitter API](#twitter-api)
+* [TwitterOAuth PHP Library for the Twitter REST API](https://twitteroauth.com/)
 
 #### Deployment
 * [Command-line snippets](#command-line-snippets)
