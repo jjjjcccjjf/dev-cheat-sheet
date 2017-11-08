@@ -1076,13 +1076,13 @@ On windows, you need to launch [git bash](https://git-scm.com/downloads). On Mac
 ### Installing Wordpress
 Copy and paste the ff. to your Terminal
 ```bash
-$ cd /path/to/your/environment/
-$ curl -O https://wordpress.org/latest.zip
-$ unzip latest.zip
-$ rm latest.zip
-$ mv wordpress my-project
-$ cd my-project
-$ cp -i wp-config-sample.php wp-config.php
+cd /path/to/your/environment/
+curl -O https://wordpress.org/latest.zip
+unzip latest.zip
+rm latest.zip
+mv wordpress my-project
+cd my-project
+cp -i wp-config-sample.php wp-config.php
 ```       
 
 ### Setup your Version Control
@@ -1090,11 +1090,11 @@ $ cp -i wp-config-sample.php wp-config.php
 
 Assuming you're inside your project directory
 ```bash
-$ git init
-$ git add .
-$ git commit -m "initial commit"
-$ git remote add origin https://github.com/your-username/my-project.git
-$ git push -u origin master
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin https://github.com/your-username/my-project.git
+git push -u origin master
 ```
 
 ## .htaccess
