@@ -878,7 +878,7 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
     'prev_next'       => True,
     'prev_text'       => __('&laquo;'),
     'next_text'       => __('&raquo;'),
-    'type'            => 'plain',
+    'type'            => 'list',
     'add_args'        => false,
     'add_fragment'    => ''
   );
@@ -914,8 +914,8 @@ $args = array(
   'posts_per_page' => 1, # Count of posts per page
   'paged' => $paged
 );
-$loop = new WP_Query( $args );
-if ($loop->have_posts()) : while ( $loop->have_posts() ) : $loop->the_post();
+$the_query = new WP_Query( $args );
+if ($the_query->have_posts()) : while ( $the_query->have_posts() ) : $the_query->the_post();
 ?>
 
 <li>
@@ -932,9 +932,9 @@ if ($loop->have_posts()) : while ( $loop->have_posts() ) : $loop->the_post();
 endwhile;
 /* Pagination */
 if (function_exists(custom_pagination)) {
-  custom_pagination($loop->max_num_pages,"",$paged);
+  custom_pagination($the_query->max_num_pages,"",$paged);
 }
-# Make sure to change $loop variable to your actual loop variable!!!!
+# Make sure to change $the_query variable to your actual loop variable!!!!
 /* Pagination */
 wp_reset_postdata();
 ?>
