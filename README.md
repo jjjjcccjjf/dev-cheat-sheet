@@ -554,8 +554,10 @@ or
        <?php endif;  ?>
        
 #### Snippets for using wordpress outside of wordpress
-
-       $path = $_SERVER['DOCUMENT_ROOT'] . '/wealthmart'; #TODO: Change me on live
+	
+       $path = $_SERVER['DOCUMENT_ROOT'] . '/wealthmart'; # Use this if you have subfolder
+       $path = $_SERVER['DOCUMENT_ROOT']; # Use this if your project is in public_html (root folder)
+       $path = '../../../../..'; # Use this if everything else fails 🙄
 
        include_once $path . '/wp-config.php';
        include_once $path . '/wp-load.php';
@@ -827,7 +829,7 @@ object(WP_Query) #875 (49) { ["query"]= > array(2) {
 `Credits to Divine`  
 
 #### Pagination
-[⬆ Back to top](#dev-cheat-sheet-)
+[⬆ Back to top](#dev-cheat-sheet-)  
 **Note**: Make sure you don't have a custom post type and a slug with a same name
 
 Save this as `function-pagination.php`
