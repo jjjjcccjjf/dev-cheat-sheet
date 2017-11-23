@@ -828,6 +828,7 @@ object(WP_Query) #875 (49) { ["query"]= > array(2) {
 
 #### Pagination
 [⬆ Back to top](#dev-cheat-sheet-)
+**Note**: Make sure you don't have a custom post type and a slug with a same name
 
 Save this as `function-pagination.php`
 ```php
