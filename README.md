@@ -870,8 +870,9 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
   * We construct the pagination arguments to enter into our paginate_links
   * function.
   */
-  $pagination_args = array(
-    'base'            => get_pagenum_link(1) . '%_%',
+ $pagination_args = array(
+    // 'base' => str_replace(999999999, '%#%', esc_url(get_pagenum_link(999999999))), # Uncomment this line to enable dynamic query_string @divine
+    'base'            => get_pagenum_link(1) . '%_%', # Comment out this line to enable dynamic query_string
     'format'          => 'page/%#%',
     'total'           => $numpages,
     'current'         => $paged,
@@ -884,8 +885,8 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
     'type'            => 'list',
     'add_args'        => false,
     'add_fragment'    => ''
-  );
-  
+    );
+
   $paginate_links = paginate_links($pagination_args);
   
   if ($paginate_links) {
