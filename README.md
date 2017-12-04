@@ -579,6 +579,12 @@ or
 $post_type = get_post_type_object( get_post_type( $data->ID ))->label;
 ```
 
+#### Getting the slug in wordpress
+```php
+global $post;
+$slug = $post->post_name; # Slug of the page
+```
+
 #### Exclude a post from the_query
 ```php
 $args = array('post_type' => 'article', 'posts_per_page' => $post_count,
