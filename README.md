@@ -17,6 +17,16 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * jp_lib
 * __Add back to top__
 
+# Refactor this!
+
+## Selecting a dynamically generated element
+```javascript
+    $('body').on('click', '.your-btn', function(){
+      var data_id = $(this).data('id'); 
+      ...
+      });
+```
+
 ---
  
 # Contents 
