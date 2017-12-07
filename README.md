@@ -579,6 +579,11 @@ or
        
        <?php echo apply_filters('the_content', get_post_field('post_content', 92)); ?>
        
+#### Displaying the_content as an excerpt without images
+```php
+$excerpt = wp_trim_words( get_the_content(), 150, ''); 
+```
+       
 #### Detect if page is of custom post type or single
 
 	if(is_singular(array('cpt_name'))){
