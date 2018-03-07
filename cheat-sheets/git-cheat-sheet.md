@@ -57,6 +57,9 @@
 #### Delete a local branch
 `$ git branch -d <branch>`
 
+#### Delete a remote branch
+`$ git push origin --delete <branch>`
+
 #### Mark the current commit with a tag 
 `$ git tag <tag-name>`
 
