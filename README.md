@@ -251,8 +251,8 @@ $.ajax({
       alert('All that we are is the result of what we have thought.');
     }
   },
-  error: function(e){
-    console.error(e);
+  error: function(err){
+    console.error(err);
   }
 });
 ```
@@ -275,8 +275,8 @@ $.ajax({
       alert('All that we are is the result of what we have thought.');
     }
   },
-  error: function(e){
-    console.error(e);
+  error: function(err){
+    console.error(err);
   },
   cache: false,
   contentType: false,
@@ -286,9 +286,7 @@ $.ajax({
 e.preventDefault();
 });
 ```
-
-});
-// GET JSON BLOCK
+ 
  
 # Back-end
 ### PHP Snippets
