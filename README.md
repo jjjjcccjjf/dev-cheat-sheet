@@ -227,6 +227,68 @@ Just paste this on your footer and it will work
        </script>
        <!-- /smooth scroll  -->
 ```
+
+### Javascript Snippets
+
+#### Simple GET request via Ajax/XMLHttpRequest
+```javascript
+$.getJSON('http://localhost/api/members', function(result){ 
+  // your code
+}
+```
+
+#### Ajax/XMLHttpRequest for other HTTP Verbs
+```javascript
+$.ajax({
+  url: 'http://localhost/admin/ajax.php',
+  type: 'POST',
+  data: form_data,
+  success: function (result, textStatus, xhr) {
+    if(xhr.status == 200){
+      // do something
+    }else{
+      // error
+      alert('All that we are is the result of what we have thought.');
+    }
+  },
+  error: function(e){
+    console.error(e);
+  }
+});
+```
+
+#### Ajax/XMLHttpRequest from form submit with media
+```javascript
+$("#the_id_of_the_form").submit(function(e){
+
+var form_data = new FormData($(this)[0]);
+  
+$.ajax({
+  url: 'http://localhost/admin/ajax.php',
+  type: 'POST',
+  data: form_data,
+  success: function (result, textStatus, xhr) {
+    if(xhr.status == 200){
+      // do something
+    }else{
+      // error
+      alert('All that we are is the result of what we have thought.');
+    }
+  },
+  error: function(e){
+    console.error(e);
+  },
+  cache: false,
+  contentType: false,
+  processData: false
+});
+
+e.preventDefault();
+});
+```
+
+});
+// GET JSON BLOCK
  
 # Back-end
 ### PHP Snippets
