@@ -230,6 +230,13 @@ Just paste this on your footer and it will work
 
 ### Javascript Snippets
 
+#### Make checkbox like radio button (Only one checked item at a time)
+```javascript
+$('input[name=check_if]').on('change', function(){
+  $('input[name=check_if]').not(this).prop('checked', false);
+});
+```
+
 #### Simple GET request via Ajax/XMLHttpRequest
 ```javascript
 $.getJSON('http://localhost/api/members', function(result){ 
