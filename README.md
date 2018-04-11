@@ -357,6 +357,11 @@ function formatPrice($n)
 ```php
 $array = array_values($array);
 ```
+
+### Read a CSV file
+```php
+$csv = array_map('str_getcsv', file(base_url() . 'test.csv'));
+```
  
 ### Wordpress
 [⬆ Back to top](#dev-cheat-sheet-)
