@@ -65,7 +65,9 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
     * JavaScript Snippets
     * [REST-Igniter Authorization](#rest-igniter-authorization)
     * [Accelerated Mobile Pages (AMP)](#accelerated-mobile-pages-amp)
-
+* Other
+    * [ReCAPTCHA Code Snippet](https://www.google.com/url?q=https://gist.github.com/jjjjcccjjf/bb5f0053244a431ba5bc60ee1943c38b&sa=D&source=hangouts&ust=1524816959016000&usg=AFQjCNGfwqQujYlLQgvFuULV_dXIHUcffQ)
+    
 #### API
 * [Twitter API](#twitter-api)
 * [TwitterOAuth PHP Library for the Twitter REST API](https://twitteroauth.com/)
