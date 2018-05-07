@@ -17,16 +17,6 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * jp_lib
 * __Add back to top__
 
-# Refactor this!
-
-## Selecting a dynamically generated element
-```javascript
-    $('body').on('click', '.your-btn', function(){
-      var data_id = $(this).data('id'); 
-      ...
-      });
-```
-
 ---
  
 # Contents 
@@ -239,6 +229,14 @@ $('input[name=check_if]').on('change', function(){
 });
 ```
 
+## Selecting a dynamically generated element
+```javascript
+$('body').on('click', '.your-btn', function(){
+  var data_id = $(this).data('id'); 
+  ...
+});
+```
+
 #### Simple GET request via Ajax/XMLHttpRequest
 ```javascript
 $.getJSON('http://localhost/api/members', function(result){ 
@@ -296,7 +294,7 @@ e.preventDefault();
 });
 ```
 
-#### Mimic a form submit
+#### Mimic a form submit using an Object
 
 ```javascript
 function invokeForm(path, parameters) {
