@@ -782,6 +782,18 @@ $excerpt = wp_trim_words( get_the_content(), 150, '');
 $post_type = get_post_type_object( get_post_type( $data->ID ))->label;
 ```
 
+#### Limiting word count in the excerpt
+
+```php
+// Filter except length to 35 words.
+// tn custom excerpt length
+# Add this to functions.php
+function tn_custom_excerpt_length( $length ) {
+return 22;
+}
+add_filter( 'excerpt_length', 'tn_custom_excerpt_length', 999 );
+```
+
 #### Getting the slug in wordpress
 ```php
 global $post;
