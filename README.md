@@ -488,7 +488,7 @@ $ rm my-project/style.css.bak
        while(have_posts()): the_post();
        ?>
        
-       <!-- your content here ->
+       <!-- your content here -->
        
        <?php 
        endwhile;
