@@ -810,6 +810,10 @@ $args = array('post_type' => 'article', 'posts_per_page' => $post_count,
 
         $args = array('post_type' => array('page', 'project', 'location', 'bank'),
          'posts_per_page' => -1, 's' => @$_GET['q']);
+	 
+#### Args for meta query
+
+	$args = array('post_type' => 'our_properties', 'posts_per_page' => 3, 'paged' => $paged, 'meta_key' => 'location', 'meta_value' => get_the_ID());
 
 #### Display post count from the WP Query
 
