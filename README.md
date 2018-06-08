@@ -1168,6 +1168,15 @@ if (function_exists(custom_pagination)) {
 wp_reset_postdata();
 ?>
 ``` 
+
+#### For enabling single page usage of function pagination  
+[source](https://www.google.com/url?q=https://wordpress.stackexchange.com/questions/129486/using-paged-redirects-page-2-to-page-1&sa=D&source=hangouts&ust=1528531425407000&usg=AFQjCNEw3_BUMpWNR4wk2JGLgNQQ4O9E0g)
+```php
+function pif_disable_redirect_canonical($redirect_url) {
+	if (is_single()) $redirect_url = false;
+	return $redirect_url;
+}
+```
 - - -
 
 # REST-Igniter Authorization
