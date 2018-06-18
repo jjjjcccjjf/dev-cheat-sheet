@@ -74,6 +74,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * [Regular Expressions (RegEx)](https://github.com/zeeshanu/learn-regex)
 * [Git commit conventions](https://chris.beams.io/posts/git-commit/)
 * [.gitignore for Wordpress](https://gist.github.com/jjjjcccjjf/7516920786f200414d0178d7bcdaf06f)
+* [WP Optimize Guide](https://github.com/jjjjcccjjf/wp-optimize-guide/blob/master/README.md)
 - - -
 
 # Development Tools
