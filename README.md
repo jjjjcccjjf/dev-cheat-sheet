@@ -1198,8 +1198,8 @@ function pif_disable_redirect_canonical($redirect_url) {
        PRIMARY KEY (`id`)
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
-* Step 2. On `application/config/rest.php` line `326`,  
-Enable rest keys / authorization to `TRUE`
+* Step 2. **(Optional)** On `application/config/rest.php` line `326`,  
+Enable rest keys / authorization to `TRUE`. If you do this, make sure to insert a row to your `keys` table and add a base64 encoded *username:password* to the `key` field.
 ```php
 $config['rest_enable_keys'] = TRUE;
 ````
