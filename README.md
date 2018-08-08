@@ -710,7 +710,7 @@ or
        foreach ($parent_repeater_obj as $parent_obj): ?>
          <p><?php echo $parent_obj['your_field']; ?></p>
          <p><?php echo $parent_obj['details']; ?></p>
-         <?php $child_repeater_obj = $venue['child_repeater_field_name'];
+         <?php $child_repeater_obj = $parent_obj['child_repeater_field_name'];
            foreach ($child_repeater_obj as $child_obj) : ?>
              <p><?php echo $child_obj['photo']; ?></p>
            <?php endforeach; # end parent foreach?>
