@@ -822,6 +822,17 @@ $args = array('post_type' => 'article', 'posts_per_page' => $post_count,
        $the_query = new WP_Query($args);
        echo $the_query->post_count; # The post count
        
+#### Loading content of a page from another page (a la controller)
+```php 
+/* Template Name: Other template */
+global $post; 
+$post = get_term( 4, 'ee_category', OBJECT ); # house-and-lot (landing page)
+setup_postdata( $post );
+$tax = $post;
+include('taxonomy-ee_category.php'); # include the template you want to load
+wp_reset_postdata();
+```
+       
 #### Dealing with Featured Image 
 ```php
 //Default WordPress
