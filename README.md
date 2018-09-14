@@ -355,6 +355,22 @@ function formatPrice($n)
 }
 ```
 
+### Sorting a result array by created_at
+```php
+public function sortByOrder($data)
+{
+	usort($data, function($a, $b)
+	{
+	    if ($a == $b) {
+		return 0;
+	    }
+	    return (strtotime($a->created_at) < strtotime($b->created_at)) ? -1 : 1;
+	});
+
+	return $data;
+}
+```
+
 ### Reorder arrays after unset()
 ```php
 $array = array_values($array);
