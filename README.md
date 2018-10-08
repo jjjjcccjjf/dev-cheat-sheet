@@ -1079,6 +1079,17 @@ object(WP_Query) #875 (49) { ["query"]= > array(2) {
       #fail..
   }
 ```
+
+#### Remove css from wp_head()
+**Paste this on functions.php** 
+```php
+function remove_all_theme_styles() {
+	global $wp_styles;
+    $wp_styles->queue = array();
+}
+add_action('wp_print_styles', 'remove_all_theme_styles', 100);
+```
+
 `Credits to Divine`  
 
 #### Pagination
