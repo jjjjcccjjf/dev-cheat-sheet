@@ -1394,7 +1394,7 @@ git push -u origin master
 # RewriteCond %{REQUEST_URI} ^(.*)?wp-login\.php(.*)$ [OR]
 # RewriteCond %{REQUEST_URI} ^(.*)?wp-admin$
 # RewriteCond %{REMOTE_ADDR} !^124.106.142.167$
-# RewriteCond %{REMOTE_ADDR} !^146.88.67.237$
+# RewriteRule ^(.*)$ - [R=403,L]
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
