@@ -1090,6 +1090,15 @@ function remove_all_theme_styles() {
 add_action('wp_print_styles', 'remove_all_theme_styles', 100);
 ```
 
+#### Fix for Error 500 upon editing a page
+```php
+/** Memory Limit */
+define('WP_MEMORY_LIMIT', '1024G');
+define( 'WP_MAX_MEMORY_LIMIT', '1024G' );
+
+/* That's all, stop editing! Happy blogging. */
+```
+
 `Credits to Divine`  
 
 #### Pagination
