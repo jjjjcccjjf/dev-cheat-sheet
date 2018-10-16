@@ -1099,6 +1099,14 @@ define( 'WP_MAX_MEMORY_LIMIT', '1024G' );
 /* That's all, stop editing! Happy blogging. */
 ```
 
+#### Media not showing in Media Library bug
+1. Log on to cpanel
+1. Go to phpmyadmin
+1. SELECT * FROM wp_posts WHERE ID = '0' AND post_type = 'attachment'
+1. Delete FROM wp_posts WHERE ID = '0' AND post_type = 'attachment'
+
+
+
 `Credits to Divine`  
 
 #### Pagination
