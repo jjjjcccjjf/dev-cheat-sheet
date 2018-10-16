@@ -5,8 +5,6 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 
     ― Albert Einstein
 
-
-
 # TODO:
 * Add cute emojis
 * Add frameworks
@@ -1104,7 +1102,7 @@ define( 'WP_MAX_MEMORY_LIMIT', '1024G' );
 1. Go to `phpmyadmin`
 1. Execute the following queries:
     * `SELECT * FROM wp_posts WHERE ID = '0' AND post_type = 'attachment'`
-    * Delete FROM wp_posts WHERE ID = '0' AND post_type = 'attachment'
+    * `Delete FROM wp_posts WHERE ID = '0' AND post_type = 'attachment'`
 
 `Credits to Divine`  
 
