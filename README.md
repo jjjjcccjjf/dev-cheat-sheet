@@ -551,6 +551,8 @@ Common WP plugins for a generic website
 | Custom Post Type UI                   | For custom post types                        |
 | [Advanced Custom Fields PRO](https://drive.google.com/file/d/0B_bwOHDZvZw-UkJZYUxRRWFHUUE/view?usp=sharing) | For additional custom fields                 |  
 | Enable Media Replace | For replacing images in Media Library |
+| WP Mail SMTP by WPForms | For sending secure mails |
+| [UpdraftPlus WordPress Backup Plugin](https://www.dropbox.com/sh/gb35gzy1hcf7fli/AAD4FOZ15Y1Z9f71LwhGpNSDa?dl=0) | For backups |
 
 #### Plugins for Site Optimization and SEO
 These are the plugins used commonly to boost page speed score and fixing SEO related issues
