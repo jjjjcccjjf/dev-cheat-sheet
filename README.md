@@ -325,6 +325,44 @@ function invokeForm(path, parameters) {
 ### PHP Snippets
 [⬆ Back to top](#dev-cheat-sheet-)
 
+#### Export to CSV / CI
+```php
+  public function export()
+  {
+    // output headers so that the file is downloaded rather than displayed
+    header('Content-type: text/csv');
+    header('Content-Disposition: attachment; filename="sales_export.csv"');
+    // do not cache the file
+    header('Pragma: no-cache');
+    header('Expires: 0');
+    // create a file pointer connected to the output stream
+    $file = fopen('php://output', 'w');
+    // send the column headers
+    fputcsv($file, array('Coupon ID', 'Full name', 'Email address', 'Contact No.', 'Reward', 'Promo', 'Created Date'));
+    $res = $this->redeem_model->allM($this->session->mall_id);
+    
+    $new_res = [];
+    foreach ($res as $key => $value) {
+      $new_res[] = array(
+        $value->coupon_id,
+        $value->full_name,
+        $value->email,
+        $value->contact_num,
+        $value->reward_name,
+        $value->promo_name,
+        $value->created_at_f,
+      );
+    }
+    $data = $new_res;
+    
+    foreach ($data as $row)
+    {
+      fputcsv($file, $row);
+    }
+    exit();
+  }
+```
+
 #### Number formatting
 Function for formatting price. 20000 -> 20K, 1000000 to 1M, etc
 ```php
