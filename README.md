@@ -509,6 +509,16 @@ get_dates_of_quarter('previous');
 ### Wordpress
 [⬆ Back to top](#dev-cheat-sheet-)
 
+#### For estates wp-login.php bug
+1. Go to public_html/wp-login.php
+1. Around line 900 find the "#loginform" html
+1. Replace the following lines with this snippet
+1. 
+```
+<form name="loginform" id="loginform" action="<?php echo str_replace("http://", "https://", esc_url( site_url( 'wp-login.php', 'login_post' ) )); ?>" method="post">
+```
+
+
 After [installing wordpress](#installing-wordpress), edit your `wp-config.php` and fill-out appropriate credentials
        
 #### Branding your theme
