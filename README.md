@@ -363,6 +363,35 @@ function invokeForm(path, parameters) {
   }
 ```
 
+#### Delete from URL
+```php
+  /**
+   * unlink all montage temporary files
+   * except ffmpeg.exe, of course
+   * @param  string $value [description]
+   * @return [type]        [description]
+   */
+  public function unlinky()
+  {
+    $filesToKeep = array(
+    'uploads/_montage_temp/ffmpeg.exe',
+    );
+
+    $dirList = glob('uploads/_montage_temp/*'); # get all files\
+
+    foreach ($dirList as $file) {
+        if (! in_array($file, $filesToKeep)) { # delet
+            if (is_dir($file)) {
+                rmdir($file);
+            } else {
+                unlink($file);
+            }//END IF
+        }//END IF
+    }//END FOREACH LOOP
+
+  }
+```
+
 #### Number formatting
 Function for formatting price. 20000 -> 20K, 1000000 to 1M, etc
 ```php
