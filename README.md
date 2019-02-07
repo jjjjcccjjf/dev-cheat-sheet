@@ -961,6 +961,39 @@ get_the_terms($post->ID, "news_archive")[0]->slug;
 ```
 ---
 
+
+### Hooks
+execute your own function whenever a certain event occurs.
+
+insert this code in `functions.php` file.
+
+#### Post is published
+```php
+function your_function($id,$post_object)
+{
+  //do something with $id / $post_object
+}
+
+$status = "publish"; // list of status //https://codex.wordpress.org/Post_Status
+$post_type = "project"; // post type name
+
+// fires after a post is published/.$status."ed"
+add_action("{$status}_{$post_type}",'your_function',10,2); // or add_action("publish_project","your_function",10,2);
+```
+
+#### Post is updated
+```php
+function your_function($id,$before,$after)
+{
+  // $before - post object before it is modified
+  // $after - updated post object
+}
+
+// fires after a post is updated
+add_action('post_updated','your_function',10,3);
+```
+
+
 ## Tired of var_dump()-ing? Here's some common WP object/array structures
 [⬆ Back to top](#dev-cheat-sheet-)
 
