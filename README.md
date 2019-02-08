@@ -963,9 +963,7 @@ get_the_terms($post->ID, "news_archive")[0]->slug;
 
 
 ### Hooks
-execute your own function whenever a certain event occurs.
-
-insert this code in `functions.php` file.
+Execute your own function whenever a certain event occurs. Insert this code in `functions.php` file.
 
 #### Post is published
 ```php
