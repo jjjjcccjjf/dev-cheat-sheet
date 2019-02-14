@@ -991,6 +991,34 @@ function your_function($id,$before,$after)
 add_action('post_updated','your_function',10,3);
 ```
 
+#### Post is Saved/updated
+if you want to access the custom fields
+```php
+
+function your_function( $post_id ) {
+  // get post object
+  $post  = get_post($post_id); 
+  
+  $is_new = $post->post_date == $post->post_modified;
+
+  $sample_acf_data = get_field('your_acf_field',$post_id); 
+
+  //fires when a new project is added 
+  if($post->post_type == 'project' && $is_new){
+  }
+
+  //fires when a project is updated
+  if($post->post_type == 'project' && !$is_new){
+  }
+    
+}
+
+add_action('acf/save_post', 'your_function', 20);
+```
+
+
+
+
 
 ## Tired of var_dump()-ing? Here's some common WP object/array structures
 [⬆ Back to top](#dev-cheat-sheet-)
