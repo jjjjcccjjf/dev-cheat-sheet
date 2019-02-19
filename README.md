@@ -1035,6 +1035,11 @@ Insert this code in `functions.php` file.
 function imageRecommended($images, &$html){
 	if(isset($images[get_the_ID()]) || array_key_exists(get_the_ID(),$images)){
 		$html .= "<p>Recommended dimension, {$images[get_the_ID()]}.</p>";
+  }
+  
+  $post_type = get_post_type();
+	if(isset($images[$post_type])){
+		$html .= "<p>Recommended dimension, {$images[$post_type]}.</p>";
 	}
 }
 
