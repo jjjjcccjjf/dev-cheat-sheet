@@ -1023,11 +1023,12 @@ Insert this code in `functions.php` file.
  * FOR MULTIPLE PAGES
  * Adds instruction(text) below the featured image field of a page 
  * 
- * $images format [ page_id(int) => Recommended dimension(string) ]
+ * $images format [ page_id(int)/post_type_slug(string) => Recommended dimension(string) ]
  * example:
  * $images = [
  * 		5 => '1600x900'
- * 		7 => '300x200'
+ * 		7 => '300x200',
+ *    'project' => '300x500',
  * ];
  * 
  */
@@ -1043,7 +1044,8 @@ function featured_image_instruction( $html ) {
   **/
 	imageRecommended([
 		7 => '1680x900',
-		8 => '1485x900'
+    8 => '1485x900',
+    'project' => '300x500'
 	],$html);
 
 	return $html;
