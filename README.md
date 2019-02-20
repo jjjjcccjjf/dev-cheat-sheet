@@ -1587,19 +1587,21 @@ git push -u origin master
 # </Files>
 # / Uncomment this block if you cannot access wp-admin
 
-# Uncomment this block for blocking wp-admin access except on some IP addresses
-# RewriteCond %{REQUEST_URI} ^(.*)?wp-login\.php(.*)$ [OR]
-# RewriteCond %{REQUEST_URI} ^(.*)?wp-admin$
-# RewriteCond %{REMOTE_ADDR} !^124.106.142.167$
-# RewriteRule ^(.*)$ - [R=403,L]
-
 <IfModule mod_rewrite.c>
+
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
+
+# Uncomment this block for blocking wp-admin access except on some IP addresses
+# RewriteCond %{REQUEST_URI} ^(.*)?wp-login\.php(.*)$ [OR]
+# RewriteCond %{REQUEST_URI} ^(.*)?wp-admin$
+# RewriteCond %{REMOTE_ADDR} !^124.106.142.167$
+# RewriteRule ^(.*)$ - [R=403,L]
+
 </IfModule>
 # END WordPress
 ```
