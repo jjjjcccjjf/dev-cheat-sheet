@@ -1017,6 +1017,49 @@ function your_function( $post_id ) {
 add_action('acf/save_post', 'your_function', 20);
 ```
 
+### Add instructions below the featured image field in a page
+Insert this code in `functions.php` file.
+```php
+/**
+ * FOR MULTIPLE PAGES
+ * Adds instruction(text) below the featured image field of a page 
+ * 
+ * $images format [ page_id(int)/post_type_slug(string) => Recommended dimension(string) ]
+ * example:
+ * $images = [
+ * 		5 => '1600x900'
+ * 		7 => '300x200',
+ *    'project' => '300x500',
+ * ];
+ * 
+ */
+function imageRecommended($images, &$html){
+	if(isset($images[get_the_ID()]) || array_key_exists(get_the_ID(),$images)){
+		$html .= "<p>Recommended dimension, {$images[get_the_ID()]}.</p>";
+  }
+  
+  $post_type = get_post_type();
+	if(isset($images[$post_type])){
+		$html .= "<p>Recommended dimension, {$images[$post_type]}.</p>";
+	}
+}
+
+function featured_image_instruction( $html ) {
+  /**
+  * Sample usage
+  **/
+	imageRecommended([
+		7 => '1680x900',
+    8 => '1485x900',
+    'project' => '300x500'
+	],$html);
+
+	return $html;
+   
+}
+ add_filter( 'admin_post_thumbnail_html', 'featured_image_instruction');
+```
+
 
 
 
