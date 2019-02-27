@@ -1590,6 +1590,12 @@ git push -u origin master
 <IfModule mod_rewrite.c>
 
 RewriteEngine On
+
+# Block for redirecting to https
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# / Block for redirecting to https
+
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
