@@ -75,6 +75,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * [.gitignore for Wordpress](https://gist.github.com/jjjjcccjjf/7516920786f200414d0178d7bcdaf06f)
 * [WP Optimize Guide](https://github.com/jjjjcccjjf/wp-optimize-guide/blob/master/README.md)
 * [Dayprise Digital Ocean Notes / How to setup LAMP Digital Ocean server with phpMyAdmin](https://gist.github.com/jjjjcccjjf/81ca59537b6ab87e76ad61e932af3437)
+* [MySQL databases using Emoji Guide](https://gist.github.com/jjjjcccjjf/4c0801c9e678c4544a5550e8ff9d5bde)
 - - -
 
 # Development Tools
