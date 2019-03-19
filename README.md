@@ -18,22 +18,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 ---
  
 # Contents 
-#### Development Tools
-* [Text Editors / Integrated Development Environment (IDE)](#text-editors--integrated-development-environment-ide)
-    * [Atom](https://atom.io/)
-    * [Sublime Text](https://www.sublimetext.com/)
-    * [Visual Studio Code](https://code.visualstudio.com/)
-* [Chrome Extensions](#chrome-extensions)
-    * [var_masterpiece](https://chrome.google.com/webstore/detail/varmasterpiece/chfhddogiigmfpkcmgfpolalagdcamkl?utm_source=chrome-app-launcher-info-dialog)
-    * [JSON Formatter](https://chrome.google.com/webstore/detail/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
-    * [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
-* File Transfer Clients
-   * [FIlezilla](https://filezilla-project.org/)
-* [Version Control Clients](#version-control-clients)
-   * [SourceTree](https://www.sourcetreeapp.com/)
-   * [Git Kraken](https://www.gitkraken.com/)
-* Other Tools
-   * [Git Bash (Terminal Interface)](https://git-scm.com/downloads)
+#### [Development Tools](https://gist.github.com/jjjjcccjjf/a280ebe212f7a8c5c19cebcd23cdb1a9)
 #### Standards
 * [PHP Standard Recommendations (PSR)](http://www.php-fig.org/psr/)
 * [RESTful APIs](http://www.restapitutorial.com/)
@@ -76,74 +61,6 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * [WP Optimize Guide](https://github.com/jjjjcccjjf/wp-optimize-guide/blob/master/README.md)
 * [Dayprise Digital Ocean Notes / How to setup LAMP Digital Ocean server with phpMyAdmin](https://gist.github.com/jjjjcccjjf/81ca59537b6ab87e76ad61e932af3437)
 * [MySQL databases using Emoji Guide](https://gist.github.com/jjjjcccjjf/4c0801c9e678c4544a5550e8ff9d5bde)
-- - -
-
-# Development Tools
-
-## Text Editors / Integrated Development Environment (IDE)
-[⬆ Back to top](#dev-cheat-sheet-)
-
-## Atom
-What I like about atom is its IDE-like experience and it also has a lot of nice plugins that I really think is essential for an efficient development workflow. This is my preffered Text Editor as well.
-#### Pros:
-* Packages
-* Has an interface for installing packages and themes, etc
-* Almost like an IDE
-* Has built-in GIT integration
-#### Cons:
-*  Slow to boot
-*  Unresponsive bug
-#### Recommended Packages
-* Remote FTP
-* Markdown Previewer Plus
-* docblockr
-* jquery-snippets
-
-[View Website](https://atom.io/)
-
-## Sublime Text
-I don't use sublime that much but it's blazingly fast compared to other text editors.
-#### Pros:
-* Super fast
-#### Cons: 
-* Installing packages is such a hassle
-#### Recommended Packages:
-* TODO:
-
-[View Website](https://www.sublimetext.com/)
-## Visual Studio Code
-Haven't used this much yet. So I don't have much opinion about it.
-
-[View Website](https://code.visualstudio.com/)
-
-- - -
-# Chrome Extensions
-[⬆ Back to top](#dev-cheat-sheet-)
-
-## var_masterpiece
-For easier debugging your var_dump results
-
-[View in Chrome Store](https://chrome.google.com/webstore/detail/varmasterpiece/chfhddogiigmfpkcmgfpolalagdcamkl?utm_source=chrome-app-launcher-info-dialog)
-## JSON Formatter
-For easier viewing your json data.
-
-[View in Chrome Store](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?utm_source=chrome-app-launcher-info-dialog)
-## Postman
-Postman is a GUI for testing your API. This is important if you are interacting with APIs
-
-[View in Chrome Store](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
-- - -
-# Version Control Clients
-[⬆ Back to top](#dev-cheat-sheet-)
-
-## SourceTree
-SourceTree is a GIT Client by Atlassian.
-[View Website](https://www.sourcetreeapp.com/)
-## Git Kraken
-[View Website](https://www.gitkraken.com/)
-## Git / Git Bash
-Git is required for other Git clients to work. But most of the time, their installer comes with git for supporting the application itself. Git Bash is an interface for a Unix-like terminal. You can also use git commands on git bash as well.
-[View Website](https://git-scm.com/downloads)
 - - -
 
 # Code Snippets
