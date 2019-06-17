@@ -41,6 +41,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
 * Other
     * [ReCAPTCHA Code Snippet](https://www.google.com/url?q=https://gist.github.com/jjjjcccjjf/bb5f0053244a431ba5bc60ee1943c38b&sa=D&source=hangouts&ust=1524816959016000&usg=AFQjCNGfwqQujYlLQgvFuULV_dXIHUcffQ)
 * [Pen Test Countermeasures](https://gist.github.com/jjjjcccjjf/30c5b818b2f7d33e753d8b8a5d16dd0a)
+* [Javascript Promises Example](https://gist.github.com/jjjjcccjjf/872772a8dffe514ad9089f5cb5a79aea)
     
 #### API
 * [Twitter API](#twitter-api)
