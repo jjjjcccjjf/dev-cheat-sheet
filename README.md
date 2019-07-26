@@ -1323,6 +1323,19 @@ if (function_exists(custom_pagination)) {
 /* Pagination */
 wp_reset_postdata();
 ?>
+
+<!-- other usage -->
+  <?php 
+  if (function_exists(custom_pagination)) {
+    $pagination = custom_pagination($the_query->max_num_pages,"",$paged);
+  }
+   ?>
+   <?php foreach ($pagination as $value):
+    ?>
+     <li class="<?php echo ($paged == strip_tags($value)) ? 'active':''; ?>">
+       <?php echo $value ?>
+     </li>
+   <?php endforeach ?>
 ``` 
 
 #### For enabling single page usage of function pagination (functions.php)  
