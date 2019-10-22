@@ -69,6 +69,7 @@ Just a compilation of kick-ass tools and code snippets to kickstart your develop
     * [Setup your version control](#setup-your-version-control)
 * [.htaccess](#htaccess)
     * [Leverage browser caching](#leverage-browser-caching)
+    * [Mixed-content issue/error or HTTPS error](https://stackoverflow.com/a/35112687/7800523)
 #### Cheat sheets & References
 * [Git Cheatsheet](https://github.com/jjjjcccjjf/dev-cheat-sheet/blob/master/cheat-sheets/git-cheat-sheet.md)
 * [Markdown Cheatsheet](https://github.com/jjjjcccjjf/dev-cheatsheet/blob/master/cheat-sheets/markdown-cheat-sheet.md)
