@@ -263,6 +263,16 @@ function invokeForm(path, parameters) {
 ### PHP Snippets
 [⬆ Back to top](#dev-cheat-sheet-)
 
+#### URL Decode $_GET 
+
+```php
+$query_string = $_SERVER['QUERY_STRING'];
+parse_str($query_string, $_GET);
+
+$property_types = @$_GET['property_type'] ?: []; # set empty arr default
+$property_locations = @$_GET['property_location'] ?: []; # set empty arr default 
+```
+
 #### Export to CSV / CI
 ```php
   public function export()
