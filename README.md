@@ -938,6 +938,12 @@ function your_function($id,$before,$after)
 add_action('post_updated','your_function',10,3);
 ```
 
+#### Template parts
+```php
+get_template_part( 'template-parts/reports/banner', 'property' ); 
+#in directory, /site/wwwroot/wp-content/themes/skf/template-parts/reports/banner-property.php
+```
+
 #### Post is Saved/updated
 if you want to access the custom fields
 ```php
