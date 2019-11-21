@@ -105,15 +105,15 @@ div img {
 ```javascript
 $(document).on('click', 'body', function(e){
   if(e.target.closest("header") === null){ 
-  // outside region
 	   $('.searchbox').hide(200);
-  } else {
-  // inside region
-	  $('.searchbox').show(200);
-      $('input[name=q]').focus();  
+  } else {  
+console.log(e.target.closest("#searchdesktop"));
+      if(e.target.closest("#searchdesktop") !== null){
+		$('.searchbox').show(200); 
+      	$('input[name=q]').focus();   
+	  } 
   }
 });
-
 ```
 
 #### Make embedded from iframe responsive
